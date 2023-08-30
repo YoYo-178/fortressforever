@@ -255,6 +255,7 @@
       <BrowseInformation>true</BrowseInformation>
       <UseFullPaths>false</UseFullPaths>
       <StringPooling>true</StringPooling>
+      <AdditionalOptions>/Zc:sizedDealloc- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -151,6 +151,7 @@
       <ModuleDependenciesFile />
       <GenerateSourceDependencies />
       <SourceDependenciesFile />
+      <AdditionalOptions>/Zc:sizedDealloc- %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -274,6 +275,7 @@
       <ModuleDependenciesFile />
       <GenerateSourceDependencies />
       <SourceDependenciesFile />
+      <AdditionalOptions>/D "strncpy=use_Q_strncpy_instead" /D "_snprintf=use_Q_snprintf_instead" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
