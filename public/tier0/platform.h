@@ -369,6 +369,13 @@ typedef void * HINSTANCE;
 #pragma warning(disable : 4305)	// truncation from 'const double ' to 'float '
 #pragma warning(disable : 4786)	// Disable warnings about long symbol names
 #pragma warning(disable : 4250) // 'X' : inherits 'Y::Z' via dominance
+#pragma warning(disable : 4316) // warning C4316: object allocated on the heap may not be aligned 16
+#pragma warning(disable : 4838) // warning C4838: conversion requires a narrowing conversion
+#pragma warning(disable : 4456) // warning C4456: declaration of 'x' hides previous local declaration
+#pragma warning(disable : 4457) // warning C4457: declaration of 'x' hides function parameter
+#pragma warning(disable : 4458) // warning C4458: declaration of 'x' hides class member
+#pragma warning(disable : 4459) // warning C4459: declaration of 'x' hides global declaration
+#pragma warning(disable : 4471) // warning C4471: '_D3DFORMAT': a forward declaration of an unscoped enumeration must have an underlying type
 
 #if _MSC_VER >= 1300
 #pragma warning(disable : 4511)	// Disable warnings about private copy constructors
