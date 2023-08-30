@@ -1120,11 +1120,11 @@ const char *KeyValues::GetString( const char *keyName, const char *defaultValue 
 		{
 #ifdef _WIN32
 			// convert the string to char *, set it for future use, and return it
-			static char buf[512];
-			int result = ::WideCharToMultiByte(CP_UTF8, 0, dat->m_wsValue, -1, buf, 512, NULL, NULL);
+			char wideBuf[512];
+			int result = ::WideCharToMultiByte(CP_UTF8, 0, dat->m_wsValue, -1, wideBuf, 512, NULL, NULL);
 			if ( result )
 			{
-				SetString( keyName, buf );
+				SetString( keyName, wideBuf );
 			}
 			else
 			{
