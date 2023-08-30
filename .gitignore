@@ -5,6 +5,9 @@
 
 # Created by https://www.gitignore.io
 
+# VS 2022 folder
+.vs/
+
 ### C++ ###
 # Compiled Object files
 *.slo
@@ -44,6 +47,9 @@
 *.suo
 *.user
 *.sln.docstates
+
+# Filter files
+*.filters
 
 # Build results
 [Dd]ebug/
@@ -272,4 +278,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-

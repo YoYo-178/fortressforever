@@ -15,6 +15,7 @@
 #pragma once
 #endif
 
+#pragma warning(disable:4456) // declaration of '' hides previous local definition (at line 336)
 
 #include "basetypes.h"
 #include "tier0/dbg.h"
