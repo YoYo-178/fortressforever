@@ -87,7 +87,7 @@
     <ExecutablePath>$(PATH);$(FrameworkDir)$(FrameworkVersion);$(VSInstallDir);$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(VCInstallDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VCInstallDir)PlatformSDK\bin;$(ExecutablePath)</ExecutablePath>
     <ReferencePath>$(FrameworkDir)$(FrameworkVersion);$(ReferencePath)</ReferencePath>
     <ExcludePath>$(FrameworkSDKDir)include;$(FrameworkDir)$(FrameworkVersion);$(VCInstallDir)include;$(VCInstallDir)PlatformSDK\include;$(ExcludePath)</ExcludePath>
-    <TargetName />
+    <TargetName>client</TargetName>
     <CopyLocalDeploymentContent />
     <CopyLocalProjectReference />
     <CopyLocalDebugSymbols />
@@ -243,7 +243,7 @@
       <OpenMPSupport>No</OpenMPSupport>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbase.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>$(IntDir)client.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
@@ -277,18 +277,20 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>Default</EnableCOMDATFolding>
-      <OptimizeReferences>Default</OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <OptimizeReferences>
+      </OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(IntDir)client.dll</OutputFile>
+      <OutputFile>$(IntDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\lib\public</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib shell32.lib gdi32.lib kernel32.lib user32.lib comdlg32.lib ole32.lib oleaut32.lib advapi32.lib steam_api.lib</AdditionalDependencies>
+      <AdditionalDependencies>winmm.lib;shell32.lib;gdi32.lib;kernel32.lib;user32.lib;comdlg32.lib;ole32.lib;oleaut32.lib;advapi32.lib;steam_api.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <IgnoreSpecificDefaultLibraries>LIBC,LIBCD,LIBCMTD</IgnoreSpecificDefaultLibraries>
-      <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
-      <ProgramDatabaseFile>$(IntDir)client.pdb</ProgramDatabaseFile>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD</IgnoreSpecificDefaultLibraries>
+      <ManifestFile>$(IntDir)$(TargetName).intermediate.manifest</ManifestFile>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(IntDir)client.map</MapFileName>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
       <HeapReserveSize>0</HeapReserveSize>
       <HeapCommitSize>0</HeapCommitSize>
       <StackReserveSize>0</StackReserveSize>
@@ -299,22 +301,25 @@
       </RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
-      <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
+      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
       <CLRUnmanagedCodeCheck>No</CLRUnmanagedCodeCheck>
       <IncrementalLinkDatabaseFile />
       <PerUserRedirection />
       <EnableUAC />
       <UACExecutionLevel />
       <UACUIAccess />
-      <AssemblyDebug>No Debuggable attribute emitted</AssemblyDebug>
-      <LargeAddressAware>Default</LargeAddressAware>
-      <TerminalServerAware>Default</TerminalServerAware>
+      <AssemblyDebug>false</AssemblyDebug>
+      <LargeAddressAware>
+      </LargeAddressAware>
+      <TerminalServerAware>
+      </TerminalServerAware>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <LinkTimeCodeGenerationObjectFile />
-      <FixedBaseAddress>Default</FixedBaseAddress>
-      <SupportUnloadOfDelayLoadedDLL>Don't Support Unload</SupportUnloadOfDelayLoadedDLL>
-      <SupportNobindOfDelayLoadedDLL>Don't Support Unload</SupportNobindOfDelayLoadedDLL>
-      <CLRThreadAttribute>No threading attribute set</CLRThreadAttribute>
+      <FixedBaseAddress>
+      </FixedBaseAddress>
+      <SupportUnloadOfDelayLoadedDLL>false</SupportUnloadOfDelayLoadedDLL>
+      <SupportNobindOfDelayLoadedDLL>false</SupportNobindOfDelayLoadedDLL>
+      <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
       <ImageHasSafeExceptionHandlers />
     </Link>
     <BuildLog>
@@ -356,7 +361,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\common\randoverride.cpp" />
+    <ClCompile Include="..\common\randoverride.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\game_shared\activitylist.cpp" />
     <ClCompile Include="..\game_shared\ammodef.cpp" />
     <ClCompile Include="..\game_shared\animation.cpp" />
@@ -369,10 +376,18 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\baseviewmodel_shared.cpp" />
     <ClCompile Include="..\game_shared\base_playeranimstate.cpp" />
     <ClCompile Include="..\game_shared\beam_shared.cpp" />
-    <ClCompile Include="..\game_shared\choreoactor.cpp" />
-    <ClCompile Include="..\game_shared\choreochannel.cpp" />
-    <ClCompile Include="..\game_shared\choreoevent.cpp" />
-    <ClCompile Include="..\game_shared\choreoscene.cpp" />
+    <ClCompile Include="..\game_shared\choreoactor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\game_shared\choreochannel.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\game_shared\choreoevent.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\game_shared\choreoscene.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\game_shared\collisionproperty.cpp" />
     <ClCompile Include="..\game_shared\death_pose.cpp" />
     <ClCompile Include="..\game_shared\decals.cpp" />
@@ -457,7 +472,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\gamevars_shared.cpp" />
     <ClCompile Include="..\game_shared\hl2\survival_gamerules.cpp" />
     <ClCompile Include="..\game_shared\igamesystem.cpp" />
-    <ClCompile Include="..\game_shared\interval.cpp" />
+    <ClCompile Include="..\game_shared\interval.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\game_shared\mapentities_shared.cpp" />
     <ClCompile Include="..\game_shared\movevars_shared.cpp" />
     <ClCompile Include="..\game_shared\multiplay_gamerules.cpp" />
@@ -475,7 +492,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\saverestore.cpp" />
     <ClCompile Include="..\game_shared\sceneentity_shared.cpp" />
     <ClCompile Include="..\game_shared\sequence_Transitioner.cpp" />
-    <ClCompile Include="..\game_shared\sheetsimulator.cpp" />
+    <ClCompile Include="..\game_shared\sheetsimulator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\game_shared\singleplay_gamerules.cpp" />
     <ClCompile Include="..\game_shared\SoundEmitterSystem.cpp" />
     <ClCompile Include="..\game_shared\soundenvelope.cpp" />
@@ -491,29 +510,71 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\voice_status.cpp" />
     <ClCompile Include="..\game_shared\weapon_parse.cpp" />
     <ClCompile Include="..\public\bone_accessor.cpp" />
-    <ClCompile Include="..\public\bone_setup.cpp" />
-    <ClCompile Include="..\public\client_class.cpp" />
-    <ClCompile Include="..\public\collisionutils.cpp" />
-    <ClCompile Include="..\public\crtmemdebug.cpp" />
-    <ClCompile Include="..\public\dt_recv.cpp" />
-    <ClCompile Include="..\public\dt_utlvector_common.cpp" />
-    <ClCompile Include="..\public\dt_utlvector_recv.cpp" />
-    <ClCompile Include="..\public\filesystem_helpers.cpp" />
-    <ClCompile Include="..\public\IceKey.cpp" />
-    <ClCompile Include="..\public\interpolatortypes.cpp" />
-    <ClCompile Include="..\public\networkvar.cpp" />
-    <ClCompile Include="..\public\rope_physics.cpp" />
-    <ClCompile Include="..\public\scratchpad3d.cpp" />
-    <ClCompile Include="..\public\ScratchPadUtils.cpp" />
-    <ClCompile Include="..\public\sentence.cpp" />
-    <ClCompile Include="..\public\simple_physics.cpp" />
+    <ClCompile Include="..\public\bone_setup.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\client_class.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\collisionutils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\crtmemdebug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\dt_recv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\dt_utlvector_common.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\dt_utlvector_recv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\filesystem_helpers.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\IceKey.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\interpolatortypes.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\networkvar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\rope_physics.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\scratchpad3d.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\ScratchPadUtils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\sentence.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\simple_physics.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\public\SoundParametersInternal.cpp" />
-    <ClCompile Include="..\public\stringregistry.cpp" />
-    <ClCompile Include="..\public\studio.cpp" />
-    <ClCompile Include="..\public\tier0\memoverride.cpp" />
+    <ClCompile Include="..\public\stringregistry.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\studio.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\tier0\memoverride.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="..\public\tools\bonelist.cpp" />
-    <ClCompile Include="..\public\vallocator.cpp" />
-    <ClCompile Include="..\public\vmatrix.cpp" />
+    <ClCompile Include="..\public\vallocator.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\public\vmatrix.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="alphamaterialproxy.cpp" />
     <ClCompile Include="animatedentitytextureproxy.cpp" />
     <ClCompile Include="animatedoffsettextureproxy.cpp" />
@@ -808,9 +869,13 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="initializer.cpp" />
     <ClCompile Include="interpolatedvar.cpp" />
     <ClCompile Include="in_camera.cpp" />
-    <ClCompile Include="in_joystick.cpp" />
+    <ClCompile Include="in_joystick.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="in_main.cpp" />
-    <ClCompile Include="in_mouse.cpp" />
+    <ClCompile Include="in_mouse.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="lampbeamproxy.cpp" />
     <ClCompile Include="lamphaloproxy.cpp" />
     <ClCompile Include="mapscreen.cpp" />
@@ -843,7 +908,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="proxypupil.cpp" />
     <ClCompile Include="ragdoll.cpp" />
     <ClCompile Include="recvproxy.cpp" />
-    <ClCompile Include="rendertexture.cpp" />
+    <ClCompile Include="rendertexture.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="ScreenSpaceEffects.cpp" />
     <ClCompile Include="simple_keys.cpp" />
     <ClCompile Include="smoke_fog_overlay.cpp" />

@@ -762,7 +762,6 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/server.pdb" "%FortressForever
     <ClCompile Include="guntarget.cpp" />
     <ClCompile Include="hierarchy.cpp" />
     <ClCompile Include="hl2_dll\te_gaussexplosion.cpp" />
-    <ClCompile Include="hl2_dll\vehicle_jeep.cpp" />
     <ClCompile Include="hl2_dll\WaterLODControl.cpp" />
     <ClCompile Include="hltvdirector.cpp" />
     <ClCompile Include="h_ai.cpp" />
