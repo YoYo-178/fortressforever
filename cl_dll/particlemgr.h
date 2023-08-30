@@ -117,7 +117,7 @@ entities. Each one is useful under different conditions.
 #include "utllinkedlist.h"
 #include "UtlDict.h"
 
-#include <typeinfo.h>
+#include <typeinfo>
 
 //-----------------------------------------------------------------------------
 // forward declarations

@@ -4268,7 +4268,7 @@ C_BaseEntity *C_BaseEntity::Instance( int iEnt )
 }
 
 #pragma warning( push )
-#include <typeinfo.h>
+#include <typeinfo>
 #pragma warning( pop )
 
 //-----------------------------------------------------------------------------
