@@ -342,6 +342,9 @@ typedef void * HINSTANCE;
 // as little code as possible, and throw an assertion in debug.
 #define NO_DEFAULT default: UNREACHABLE();
 
+// Pull in the /analyze code annotations.
+#include "annotations.h"
+
 #ifdef _WIN32
 // Alloca defined for this platform
 #define  stackalloc( _size ) _alloca( _size )

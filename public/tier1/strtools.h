@@ -268,6 +268,25 @@ void V_StrRight( const char *pStr, int nChars, char *pOut, int outSize );
 #define INCORRECT_PATH_SEPARATOR '\\'
 #endif
 
+int V_vsnprintfRet(OUT_Z_CAP(maxLenInCharacters) char* pDest, int maxLenInCharacters, PRINTF_FORMAT_STRING const char* pFormat, va_list params, bool* pbTruncated)
+{
+    int len = V_vsnprintf(pDest, maxLenInCharacters, pFormat, params);
+
+    if (pbTruncated)
+    {
+        *pbTruncated = (len < 0 || len >= maxLenInCharacters);
+    }
+
+    if (len < 0 || len >= maxLenInCharacters)
+    {
+        len = maxLenInCharacters;
+        pDest[maxLenInCharacters - 1] = 0;
+    }
+
+    return len;
+}
+template <size_t maxLenInCharacters> int V_vsprintfRet_safe(OUT_Z_ARRAY char(&pDest)[maxLenInCharacters], PRINTF_FORMAT_STRING const char* pFormat, va_list params, bool* pbTruncated) { return V_vsnprintfRet(pDest, maxLenInCharacters, pFormat, params, pbTruncated); }
+
 // Force slashes of either type to be = separator character
 void V_FixSlashes( char *pname, char separator = CORRECT_PATH_SEPARATOR );
 
