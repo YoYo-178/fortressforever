@@ -45,6 +45,7 @@ public:
 	// 'structors
 	CFFLuaSC() {}
 	CFFLuaSC( int iArgs, ... );
+	CFFLuaSC(CFFLuaSC && obj);
 	~CFFLuaSC();
 
 public:

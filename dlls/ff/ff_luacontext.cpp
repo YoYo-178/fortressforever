@@ -80,6 +80,11 @@ CFFLuaSC::CFFLuaSC( int iArgs, ... )
 	va_end( ap );
 }
 
+CFFLuaSC::CFFLuaSC(CFFLuaSC&& obj) 
+{
+
+}
+
 //---------------------------------------------------------------------------
 // Purpose: Constructor to use a bunch of args
 //---------------------------------------------------------------------------

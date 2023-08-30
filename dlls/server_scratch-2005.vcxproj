@@ -84,7 +84,7 @@
     <LibraryPath>$(VSInstallDir);$(VSInstallDir)lib;$(VCInstallDir)PlatformSDK\lib;$(FrameworkSDKDir)lib;$(VCInstallDir)lib;C:\Program Files\Microsoft Platform SDK\Lib</LibraryPath>
     <SourcePath>$(VC_SourcePath);</SourcePath>
     <ExcludePath>$(CommonExcludePath);$(VC_ExecutablePath_x86);$(VC_LibraryPath_x86)</ExcludePath>
-    <TargetName />
+    <TargetName>server</TargetName>
     <CopyLocalDeploymentContent />
     <CopyLocalProjectReference />
     <CopyLocalDebugSymbols />
@@ -258,42 +258,47 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>Default</EnableCOMDATFolding>
-      <OptimizeReferences>Default</OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <OptimizeReferences>
+      </OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(IntDir)server.dll</OutputFile>
+      <OutputFile>$(IntDir)$(TargetName).dll</OutputFile>
       <IncrementalLinkDatabaseFile />
-      <AdditionalLibraryDirectories>..\lib\public;..\external\lua\lib;..\external\luabind\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib luabind80.lib lua80.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Platform SDK\Lib;..\lib\public;..\external\lua\lib;..\external\luabind\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;luabind80.lib;lua80.lib</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
+      <ManifestFile>$(IntDir)$(TargetName).intermediate.manifest</ManifestFile>
       <EnableUAC />
       <UACExecutionLevel />
       <UACUIAccess />
-      <ProgramDatabaseFile>$(IntDir)server.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <AssemblyDebug>No Debuggable attribute emitted</AssemblyDebug>
+      <AssemblyDebug>false</AssemblyDebug>
       <HeapReserveSize>0</HeapReserveSize>
       <HeapCommitSize>0</HeapCommitSize>
       <StackReserveSize>0</StackReserveSize>
       <StackCommitSize>0</StackCommitSize>
-      <LargeAddressAware>Default</LargeAddressAware>
-      <TerminalServerAware>Default</TerminalServerAware>
+      <LargeAddressAware>
+      </LargeAddressAware>
+      <TerminalServerAware>
+      </TerminalServerAware>
       <ProfileGuidedDatabase>$(TargetDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <LinkTimeCodeGenerationObjectFile />
       <BaseAddress>0x22000000</BaseAddress>
       <RandomizedBaseAddress />
-      <FixedBaseAddress>Default</FixedBaseAddress>
+      <FixedBaseAddress>
+      </FixedBaseAddress>
       <DataExecutionPrevention />
-      <SupportUnloadOfDelayLoadedDLL>Don't Support Unload</SupportUnloadOfDelayLoadedDLL>
-      <SupportNobindOfDelayLoadedDLL>Don't Support Unload</SupportNobindOfDelayLoadedDLL>
-      <ImportLibrary>$(IntDir)server.lib</ImportLibrary>
-      <CLRThreadAttribute>No threading attribute set</CLRThreadAttribute>
+      <SupportUnloadOfDelayLoadedDLL>false</SupportUnloadOfDelayLoadedDLL>
+      <SupportNobindOfDelayLoadedDLL>false</SupportNobindOfDelayLoadedDLL>
+      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
+      <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
       <CLRUnmanagedCodeCheck>No</CLRUnmanagedCodeCheck>
       <ImageHasSafeExceptionHandlers />
       <IgnoreSpecificDefaultLibraries>LIBC,LIBCD,LIBCMTD</IgnoreSpecificDefaultLibraries>
-      <MapFileName>$(IntDir)server.map</MapFileName>
+      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
     </Link>
     <BuildLog>
       <Path>$(IntDir)BuildLog.htm</Path>
