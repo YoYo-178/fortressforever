@@ -334,7 +334,7 @@ void CFFWeaponMeleeBase::Swing()
 
 			// get horiz distance from swingstart to origin
 			Vector vecHorizDist = Vector(point.x, point.y, 0.0f) - Vector(swingStart.x, swingStart.y, 0.0f);
-			float flVertDist = abs(point.z - GetAbsOrigin().z);
+			float flVertDist = fabs(point.z - GetAbsOrigin().z);
 			// get vertical distance from each origin
 			float flHorizDist = vecHorizDist.Length();
 			

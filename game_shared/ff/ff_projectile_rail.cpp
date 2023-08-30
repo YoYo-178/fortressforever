@@ -475,7 +475,7 @@ void CFFProjectileRail::DieThink( void )
 //----------------------------------------------------------------------------
 void CFFProjectileRail::RailThink( void ) 
 {
-	float flDisance = abs(Vector(GetAbsOrigin() - m_vecSameOriginCheck).Length());
+	float flDisance = fabs(Vector(GetAbsOrigin() - m_vecSameOriginCheck).Length());
 	if (flDisance < 2)
 	{
 		m_flSameOriginCheckTimer += gpGlobals->frametime;
