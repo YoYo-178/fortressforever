@@ -2,12 +2,9 @@
 
 A Team Fortress mod on the Source Engine (Source SDK 2006)
 
-# <ins>**WARNING**</ins>
+### <ins>**WARNING**</ins>
 **USE THIS SETUP AT YOUR OWN RISK.**
-
-THE FORTRESS FOREVER LIBRARIES CURRENTLY **DO NOT** COMPILE WITH THIS SETUP, BECAUSE OF UNRESOLVED EXTERNALS `__dtol3` AND `__ftol3`.
-
-THE ONLY WAY TO COMPILE THE LIBRARIES WITH THIS SETUP IS TO USE THE `/FORCE:UNRESOLVED` PARAMETER, WHICH COULD PRODUCE BROKEN LIBRARIES.
+THE LIBRARIES PRODUCED BY THIS SETUP **COULD BE UNSTABLE**.
 
 ### Compiling
 
@@ -23,11 +20,7 @@ Fortress Forever can now be compiled using Visual Studio 2022. The following ins
 4. **Download the VS 2005 includes and libraries**
   * Download the [.rar file](https://drive.google.com/file/d/1HPKgTVpzB5pSSQhMJ_J8i2uP-JgO9jyA/view?usp=sharing) and extract its contents to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC`.
 5. **Build Fortress Forever**
-  * <ins>**WARNING**: ANOTHER REMINDER THAT FORTRESS FOREVER LIBRARIES CURRENTLY **DO NOT** COMPILE WITH THIS SETUP WITHOUT THE `/FORCE:UNRESOLVED` PARAMETER, WHICH COULD RESULT IN BROKEN DLLS.</ins>
-
-  * Open `Game_Scratch-2005.sln`, select `server_ff` on the left hand side and click on Properties.
-  * Click on Linker and set the value of `Force File Output` property to `Undefined Symbol Only (/FORCE:UNRESOLVED)` using the drop down menu, click on OK. ![example](https://i.imgur.com/jK0GAXK.png)
-  * Run *Build Solution*
+  * Open `Game_Scratch-2005.sln` and run *Build Solution*
   * **Note:** The compiled .dlls will automatically get copied to `<SteamDirectory>\SteamApps\common\Fortress Forever\FortressForever\bin`
 
 ### Debugging

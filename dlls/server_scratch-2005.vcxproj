@@ -133,6 +133,8 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
       <ForceFileOutput>
       </ForceFileOutput>
       <ForceSymbolReferences>%(ForceSymbolReferences)</ForceSymbolReferences>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>
@@ -486,6 +488,7 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\public\typeconversion\typeconversion.cpp" />
     <ClCompile Include="..\Public\vmatrix.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
       </PrecompiledHeader>
