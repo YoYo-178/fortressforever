@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug FF|Win32">
       <Configuration>Debug FF</Configuration>
@@ -12,357 +12,206 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{fa6d091d-d39b-404c-be9a-45e5e822e660}</ProjectGuid>
-    <RootNamespace>cldll</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>client_ff</ProjectName>
+    <ProjectGuid>{E44D6502-2BB4-47F8-85CF-ACDD4FC18329}</ProjectGuid>
+    <RootNamespace>client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>
-    </UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
-    <EnableUnitySupport />
-    <EnableASAN />
-    <EnableFuzzer />
-    <SpectreMitigation />
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>
-    </UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
-    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <EnableUnitySupport />
-    <EnableASAN />
-    <EnableFuzzer />
-    <SpectreMitigation />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Label="Shared">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.34018.303</_ProjectFileVersion>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
-    <OutDir>$(Configuration)\2005\</OutDir>
-    <IntDir>$(Configuration)\2005\</IntDir>
-    <ExtensionsToDeleteOnClean>*.obj;*.ilk;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;$(TargetPath)</ExtensionsToDeleteOnClean>
-    <IncludePath>$(VCInstallDir)PlatformSDK\include;$(FrameworkSDKDir)include;$(VCInstallDir)include;C:\Program Files\Microsoft Platform SDK\Include\crt;C:\Program Files\Microsoft Platform SDK\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(VSInstallDir);$(VSInstallDir)lib;$(VCInstallDir)PlatformSDK\lib;$(FrameworkSDKDir)lib;C:\Program Files\Microsoft Platform SDK\Lib;$(VCInstallDir)lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Program Files\Microsoft Platform SDK\src\crt;$(VCInstallDir)crt\src;$(SourcePath)</SourcePath>
-    <ExecutablePath>$(PATH);$(FrameworkDir)$(FrameworkVersion);$(VSInstallDir);$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(VCInstallDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VCInstallDir)PlatformSDK\bin;$(ExecutablePath)</ExecutablePath>
-    <ReferencePath>$(FrameworkDir)$(FrameworkVersion);$(ReferencePath)</ReferencePath>
-    <ExcludePath>$(FrameworkSDKDir)include;$(FrameworkDir)$(FrameworkVersion);$(VCInstallDir)include;$(VCInstallDir)PlatformSDK\include;$(ExcludePath)</ExcludePath>
-    <TargetName />
-    <CopyLocalDeploymentContent />
-    <CopyLocalProjectReference />
-    <CopyLocalDebugSymbols />
-    <CopyCppRuntimeToOutputDir />
-    <EnableManagedIncrementalBuild />
-    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(Configuration)/2005\</OutDir>
+    <IntDir>$(Configuration)/2005\</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
-    <LinkDelaySign>false</LinkDelaySign>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
-    <OutDir>$(Configuration)\2005\</OutDir>
-    <IntDir>$(Configuration)\2005\</IntDir>
-    <ExtensionsToDeleteOnClean>*.obj;*.ilk;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;$(TargetPath)</ExtensionsToDeleteOnClean>
-    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(Configuration)/2005/</OutDir>
+    <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
-    <LinkDelaySign>No</LinkDelaySign>
-    <IncludePath>$(VCInstallDir)PlatformSDK\include;$(FrameworkSDKDir)include;$(VCInstallDir)include;C:\Program Files\Microsoft Platform SDK\Include\crt;C:\Program Files\Microsoft Platform SDK\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(VSInstallDir);$(VSInstallDir)lib;$(VCInstallDir)PlatformSDK\lib;$(FrameworkSDKDir)lib;C:\Program Files\Microsoft Platform SDK\Lib;$(VCInstallDir)lib;$(LibraryPath)</LibraryPath>
-    <SourcePath>C:\Program Files\Microsoft Platform SDK\src\crt;$(VCInstallDir)crt\src;$(SourcePath)</SourcePath>
+    <LinkIncremental>true</LinkIncremental>
     <ExecutablePath>$(PATH);$(FrameworkDir)$(FrameworkVersion);$(VSInstallDir);$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(VCInstallDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VCInstallDir)PlatformSDK\bin;$(ExecutablePath)</ExecutablePath>
-    <ReferencePath>$(FrameworkDir)$(FrameworkVersion);$(ReferencePath)</ReferencePath>
-    <ExcludePath>$(FrameworkSDKDir)include;$(FrameworkDir)$(FrameworkVersion);$(VCInstallDir)include;$(VCInstallDir)PlatformSDK\include;$(ExcludePath)</ExcludePath>
+    <IncludePath>$(VCInstallDir)PlatformSDK\include;$(FrameworkSDKDir)include;$(VCInstallDir)FF\include;C:\Program Files\Microsoft Platform SDK\Include\crt;C:\Program Files\Microsoft Platform SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VSInstallDir);$(VSInstallDir)lib;$(VCInstallDir)PlatformSDK\lib;$(FrameworkSDKDir)lib;C:\Program Files\Microsoft Platform SDK\Lib;$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
     <TargetName>client</TargetName>
-    <CopyLocalDeploymentContent />
-    <CopyLocalProjectReference />
-    <CopyLocalDebugSymbols />
-    <CopyCppRuntimeToOutputDir />
-    <EnableManagedIncrementalBuild />
+    <LinkDelaySign>false</LinkDelaySign>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+    <CustomBuildStep>
+      <Message>Copying to destination folder</Message>
+      <Command>if exist "%25FortressForeverBin%25" copy "$(TargetPath)" "%25FortressForeverBin%25"
+if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressForeverBin%25"
+</Command>
+      <Outputs>client.dll;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\client___Win32_Debug_DoD/client.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
-      <SDLCheck>
-      </SDLCheck>
-      <PreprocessorDefinitions>
-      </PreprocessorDefinitions>
-      <ConformanceMode>
-      </ConformanceMode>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Public/tier1;.\ff\vgui;.\ff;..\game_shared\ff;.;.\..\Public;.\..\vgui2\include;.\..\vgui2\controls;..\game_shared;.\game_controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;fopen=dont_use_fopen;FF_DLL;NO_STRING_T;CLIENT_DLL;_WINDOWS;VECTOR;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;_WIN32;PROTECTED_THINGS_ENABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbase.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)client.pch</PrecompiledHeaderOutputFile>
-      <AdditionalIncludeDirectories>../Public/tier1;.\ff\vgui;.\ff;..\game_shared\ff;.;.\..\Public;.\..\vgui2\include;.\..\vgui2\controls;..\game_shared;.\game_controls</AdditionalIncludeDirectories>
-      <Optimization>
-      </Optimization>
-      <StringPooling>
-      </StringPooling>
-      <ExceptionHandling>false</ExceptionHandling>
-      <RuntimeLibrary>
-      </RuntimeLibrary>
-      <FunctionLevelLinking>
-      </FunctionLevelLinking>
-      <FloatingPointExceptions>No</FloatingPointExceptions>
-      <RuntimeTypeInfo>Yes</RuntimeTypeInfo>
-      <OpenMPSupport>No</OpenMPSupport>
-      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <XMLDocumentationFileName>$(IntDir)</XMLDocumentationFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
-      <UseFullPaths>false</UseFullPaths>
-      <InlineFunctionExpansion />
-      <IntrinsicFunctions />
-      <FavorSizeOrSpeed />
-      <DebugInformationFormat />
-      <LanguageStandard />
-      <LanguageStandard_C />
-      <TreatWarningAsError>No</TreatWarningAsError>
-      <ScanSourceForModuleDependencies />
-      <TranslateIncludes />
-      <SupportJustMyCode />
-      <DiagnosticsFormat />
-      <OmitFramePointers>No</OmitFramePointers>
-      <UndefineAllPreprocessorDefinitions />
-      <PreprocessToFile />
-      <PreprocessSuppressLineNumbers />
-      <MinimalRebuild>No</MinimalRebuild>
-      <BufferSecurityCheck />
-      <IntelJCCErratum />
-      <TreatWChar_tAsBuiltInType>Yes</TreatWChar_tAsBuiltInType>
-      <ForceConformanceInForLoopScope>Yes</ForceConformanceInForLoopScope>
-      <RemoveUnreferencedCodeData />
-      <ModuleOutputFile />
-      <ModuleDependenciesFile />
-      <GenerateSourceDependencies />
-      <SourceDependenciesFile />
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
     </ClCompile>
-    <Link>
-      <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(IntDir)client.dll</OutputFile>
-      <IncrementalLinkDatabaseFile />
-      <PerUserRedirection />
-      <AdditionalLibraryDirectories>..\lib\public</AdditionalLibraryDirectories>
-      <AdditionalDependencies />
-      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
-      <ManifestFile>$(IntDir)\$(TargetFileName).intermediate.manifest</ManifestFile>
-      <EnableUAC />
-      <UACExecutionLevel />
-      <UACUIAccess />
-      <ProgramDatabaseFile>$(IntDir)/client.pdb</ProgramDatabaseFile>
-      <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(IntDir)/client.map</MapFileName>
-      <AssemblyDebug>No Debuggable attribute emitted</AssemblyDebug>
-      <HeapReserveSize>0</HeapReserveSize>
-      <HeapCommitSize>0</HeapCommitSize>
-      <StackReserveSize>0</StackReserveSize>
-      <StackCommitSize>0</StackCommitSize>
-      <LargeAddressAware>Default</LargeAddressAware>
-      <TerminalServerAware>Default</TerminalServerAware>
-      <OptimizeReferences>Default</OptimizeReferences>
-      <EnableCOMDATFolding>Default</EnableCOMDATFolding>
-      <ProfileGuidedDatabase>$(TargetDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <LinkTimeCodeGenerationObjectFile />
-      <BaseAddress>0x24000000</BaseAddress>
-      <RandomizedBaseAddress />
-      <FixedBaseAddress>Default</FixedBaseAddress>
-      <DataExecutionPrevention />
-      <SupportUnloadOfDelayLoadedDLL>Don't Support Unload</SupportUnloadOfDelayLoadedDLL>
-      <SupportNobindOfDelayLoadedDLL>Don't Support Unload</SupportNobindOfDelayLoadedDLL>
-      <ImportLibrary>$(IntDir)/client.lib</ImportLibrary>
-      <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
-      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
-    </Link>
-    <BuildLog>
-      <Path>$(IntDir)BuildLog.htm</Path>
-    </BuildLog>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
     <ProjectReference>
-      <LinkLibraryDependencies />
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
-    <Manifest>
-      <VerboseOutput>false</VerboseOutput>
-      <OutputManifestFile>$(IntDir)\$(TargetFileName).embed.manifest</OutputManifestFile>
-    </Manifest>
-    <ManifestResourceCompile>
-      <ResourceOutputFileName>$(IntDir)\$(TargetFileName).embed.manifest.res</ResourceOutputFileName>
-    </ManifestResourceCompile>
-    <Xdcmake>
-      <OutputFile>$(TargetDir)$(TargetName).xml</OutputFile>
-    </Xdcmake>
-    <Bscmake>
-      <OutputFile>$(OutDir)/$(ProjectName).bsc</OutputFile>
-    </Bscmake>
-    <Bscmake>
-      <PreserveSbr />
-    </Bscmake>
+    <Link>
+      <AdditionalDependencies>winmm.lib;steam_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(IntDir)client.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(IntDir)client.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)client.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x24000000</BaseAddress>
+      <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Message>Copying to destination folder</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>client.dll</Outputs>
-    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+    <CustomBuildStep>
+      <Message>Copying to destination folder</Message>
+      <Command>if exist "%25FortressForeverBin%25" copy "$(TargetPath)" "%25FortressForeverBin%25"
+if exist "%25FortressForeverBin%25" copy "$(TargetPath)" "%25FortressForeverBin%25/../bin_release/"
+if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressForeverBin%25"
+if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressForeverBin%25/../bin_release/"
+</Command>
+      <Outputs>client.dll;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\client___Win32_Release_DoD/client.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>
-      </SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;FF_DLL;NO_STRING_T;CLIENT_DLL;_WINDOWS;VECTOR;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;_WIN32;PROTECTED_THINGS_ENABLE</PreprocessorDefinitions>
-      <ConformanceMode>
-      </ConformanceMode>
-      <AdditionalIncludeDirectories>../Public/tier1;.\ff\vgui;.\ff;..\game_shared\ff;.;.\..\Public;.\..\vgui2\include;.\..\vgui2\controls;..\game_shared;.\game_controls</AdditionalIncludeDirectories>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>../Public/tier1;.\ff\vgui;.\ff;..\game_shared\ff;.;.\..\Public;.\..\vgui2\include;.\..\vgui2\controls;..\game_shared;.\game_controls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;FF_DLL;NO_STRING_T;CLIENT_DLL;_WINDOWS;VECTOR;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead;_WIN32;PROTECTED_THINGS_ENABLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
-      <ExceptionHandling>false</ExceptionHandling>
+      <ExceptionHandling />
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FloatingPointExceptions>No</FloatingPointExceptions>
-      <RuntimeTypeInfo>Yes</RuntimeTypeInfo>
-      <OpenMPSupport>No</OpenMPSupport>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cbase.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)client.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <XMLDocumentationFileName>$(IntDir)</XMLDocumentationFileName>
       <BrowseInformation>true</BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
-      <UseFullPaths>false</UseFullPaths>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <LanguageStandard />
-      <LanguageStandard_C />
-      <TreatWarningAsError>No</TreatWarningAsError>
-      <ScanSourceForModuleDependencies />
-      <TranslateIncludes />
-      <SupportJustMyCode />
-      <DiagnosticsFormat />
-      <OmitFramePointers>No</OmitFramePointers>
-      <UndefineAllPreprocessorDefinitions />
-      <PreprocessToFile />
-      <PreprocessSuppressLineNumbers />
-      <MinimalRebuild>No</MinimalRebuild>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <IntelJCCErratum />
-      <TreatWChar_tAsBuiltInType>Yes</TreatWChar_tAsBuiltInType>
-      <ForceConformanceInForLoopScope>Yes</ForceConformanceInForLoopScope>
-      <RemoveUnreferencedCodeData />
-      <ModuleOutputFile />
-      <ModuleDependenciesFile />
-      <GenerateSourceDependencies />
-      <SourceDependenciesFile />
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <AdditionalOptions>/Zc:sizedDealloc- /c /Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
     <Link>
-      <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>
-      </EnableCOMDATFolding>
-      <OptimizeReferences>
-      </OptimizeReferences>
+      <AdditionalDependencies>libcmt.lib;ucrt.lib;winmm.lib;shell32.lib;gdi32.lib;kernel32.lib;user32.lib;comdlg32.lib;ole32.lib;oleaut32.lib;advapi32.lib;steam_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(IntDir)$(TargetName).dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(IntDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>..\lib\public</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;shell32.lib;gdi32.lib;kernel32.lib;user32.lib;comdlg32.lib;ole32.lib;oleaut32.lib;advapi32.lib;steam_api.lib</AdditionalDependencies>
-      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD</IgnoreSpecificDefaultLibraries>
-      <ManifestFile>$(IntDir)$(TargetName).intermediate.manifest</ManifestFile>
       <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x24000000</BaseAddress>
+      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <HeapReserveSize>0</HeapReserveSize>
       <HeapCommitSize>0</HeapCommitSize>
       <StackReserveSize>0</StackReserveSize>
       <StackCommitSize>0</StackCommitSize>
-      <ProfileGuidedDatabase>$(TargetDir)$(TargetName).pgd</ProfileGuidedDatabase>
-      <BaseAddress>0x24000000</BaseAddress>
-      <RandomizedBaseAddress>
-      </RandomizedBaseAddress>
-      <DataExecutionPrevention>
-      </DataExecutionPrevention>
-      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
-      <CLRUnmanagedCodeCheck>No</CLRUnmanagedCodeCheck>
-      <IncrementalLinkDatabaseFile />
-      <PerUserRedirection />
-      <EnableUAC />
-      <UACExecutionLevel />
-      <UACUIAccess />
-      <AssemblyDebug>false</AssemblyDebug>
-      <LargeAddressAware>
-      </LargeAddressAware>
-      <TerminalServerAware>
-      </TerminalServerAware>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <LinkTimeCodeGenerationObjectFile />
-      <FixedBaseAddress>
-      </FixedBaseAddress>
-      <SupportUnloadOfDelayLoadedDLL>false</SupportUnloadOfDelayLoadedDLL>
-      <SupportNobindOfDelayLoadedDLL>false</SupportNobindOfDelayLoadedDLL>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
-      <ImageHasSafeExceptionHandlers />
+      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
     </Link>
-    <BuildLog>
-      <Path>$(IntDir)BuildLog.htm</Path>
-    </BuildLog>
-    <ProjectReference>
-      <LinkLibraryDependencies>
-      </LinkLibraryDependencies>
-    </ProjectReference>
-    <Manifest>
-      <VerboseOutput>false</VerboseOutput>
-      <OutputManifestFile>$(IntDir)\$(TargetFileName).embed.manifest</OutputManifestFile>
-    </Manifest>
-    <ManifestResourceCompile>
-      <ResourceOutputFileName>$(IntDir)\$(TargetFileName).embed.manifest.res</ResourceOutputFileName>
-    </ManifestResourceCompile>
-    <Xdcmake>
-      <OutputFile>$(TargetDir)$(TargetName).xml</OutputFile>
-    </Xdcmake>
-    <Bscmake>
-      <OutputFile>$(OutDir)$(ProjectName).bsc</OutputFile>
-      <PreserveSbr />
-    </Bscmake>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Command>if exist "%FortressForeverBin%" copy "$(TargetPath)" "%FortressForeverBin%"
-if exist "%FortressForeverBin%" copy "$(TargetPath)" "%FortressForeverBin%/../bin_release/"
-if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForeverBin%"
-if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForeverBin%/../bin_release/"
-</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>Copying to destination folder</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>client.dll</Outputs>
-    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\common\randoverride.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\activitylist.cpp" />
     <ClCompile Include="..\game_shared\ammodef.cpp" />
@@ -377,16 +226,28 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\base_playeranimstate.cpp" />
     <ClCompile Include="..\game_shared\beam_shared.cpp" />
     <ClCompile Include="..\game_shared\choreoactor.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\choreochannel.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\choreoevent.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\choreoscene.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\collisionproperty.cpp" />
     <ClCompile Include="..\game_shared\death_pose.cpp" />
@@ -473,7 +334,10 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\hl2\survival_gamerules.cpp" />
     <ClCompile Include="..\game_shared\igamesystem.cpp" />
     <ClCompile Include="..\game_shared\interval.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\mapentities_shared.cpp" />
     <ClCompile Include="..\game_shared\movevars_shared.cpp" />
@@ -493,17 +357,20 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\sceneentity_shared.cpp" />
     <ClCompile Include="..\game_shared\sequence_Transitioner.cpp" />
     <ClCompile Include="..\game_shared\sheetsimulator.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\game_shared\singleplay_gamerules.cpp" />
     <ClCompile Include="..\game_shared\SoundEmitterSystem.cpp" />
     <ClCompile Include="..\game_shared\soundenvelope.cpp" />
-    <ClCompile Include="..\game_shared\Sprite.cpp" />
+    <ClCompile Include="..\game_shared\sprite.cpp" />
     <ClCompile Include="..\game_shared\SpriteTrail.cpp" />
     <ClCompile Include="..\game_shared\studio_shared.cpp" />
     <ClCompile Include="..\game_shared\takedamageinfo.cpp" />
     <ClCompile Include="..\game_shared\test_ehandle.cpp" />
-    <ClCompile Include="..\game_shared\usercmd.cpp" />
+    <ClCompile Include="..\game_shared\UserCmd.cpp" />
     <ClCompile Include="..\game_shared\usermessages.cpp" />
     <ClCompile Include="..\game_shared\util_shared.cpp" />
     <ClCompile Include="..\game_shared\voice_banmgr.cpp" />
@@ -511,93 +378,156 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="..\game_shared\weapon_parse.cpp" />
     <ClCompile Include="..\public\bone_accessor.cpp" />
     <ClCompile Include="..\public\bone_setup.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\client_class.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\public\collisionutils.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    <ClCompile Include="..\Public\CollisionUtils.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\public\crtmemdebug.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    <ClCompile Include="..\Public\crtmemdebug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\dt_recv.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\dt_utlvector_common.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\dt_utlvector_recv.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\filesystem_helpers.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\IceKey.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\interpolatortypes.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\networkvar.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\public\rope_physics.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    <ClCompile Include="..\Public\rope_physics.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\scratchpad3d.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\ScratchPadUtils.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\sentence.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\public\simple_physics.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+    <ClCompile Include="..\Public\simple_physics.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\SoundParametersInternal.cpp" />
     <ClCompile Include="..\public\stringregistry.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\studio.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\tier0\memoverride.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\tools\bonelist.cpp" />
     <ClCompile Include="..\public\vallocator.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\public\vmatrix.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="alphamaterialproxy.cpp" />
-    <ClCompile Include="animatedentitytextureproxy.cpp" />
+    <ClCompile Include="AlphaMaterialProxy.cpp" />
+    <ClCompile Include="AnimatedEntityTextureProxy.cpp" />
     <ClCompile Include="animatedoffsettextureproxy.cpp" />
-    <ClCompile Include="animatedtextureproxy.cpp" />
-    <ClCompile Include="baseanimatedtextureproxy.cpp" />
+    <ClCompile Include="AnimatedTextureProxy.cpp" />
+    <ClCompile Include="BaseAnimatedTextureProxy.cpp" />
     <ClCompile Include="beamdraw.cpp" />
     <ClCompile Include="bone_merge_cache.cpp" />
-    <ClCompile Include="camomaterialproxy.cpp" />
+    <ClCompile Include="CamoMaterialProxy.cpp" />
     <ClCompile Include="cdll_client_int.cpp" />
     <ClCompile Include="cdll_util.cpp" />
     <ClCompile Include="classmap.cpp" />
-    <ClCompile Include="clienteffectprecachesystem.cpp" />
+    <ClCompile Include="ClientEffectPrecacheSystem.cpp" />
     <ClCompile Include="cliententitylist.cpp" />
-    <ClCompile Include="clientleafsystem.cpp" />
+    <ClCompile Include="ClientLeafSystem.cpp" />
     <ClCompile Include="clientmode_shared.cpp" />
-    <ClCompile Include="clientshadowmgr.cpp" />
+    <ClCompile Include="ClientShadowMgr.cpp" />
     <ClCompile Include="clientsideeffects.cpp" />
     <ClCompile Include="clientsideeffects_test.cpp" />
     <ClCompile Include="client_factorylist.cpp" />
     <ClCompile Include="client_thinklist.cpp" />
     <ClCompile Include="cl_mat_stub.cpp" />
-    <ClCompile Include="c_ai_basehumanoid.cpp" />
-    <ClCompile Include="c_ai_basenpc.cpp" />
+    <ClCompile Include="c_AI_BaseHumanoid.cpp" />
+    <ClCompile Include="c_AI_BaseNPC.cpp" />
     <ClCompile Include="c_baseanimating.cpp" />
     <ClCompile Include="c_baseanimatingoverlay.cpp" />
     <ClCompile Include="c_basecombatcharacter.cpp" />
@@ -650,7 +580,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="c_rumble.cpp" />
     <ClCompile Include="c_sceneentity.cpp" />
     <ClCompile Include="c_shadowcontrol.cpp" />
-    <ClCompile Include="c_smokestack.cpp" />
+    <ClCompile Include="c_SmokeStack.cpp" />
     <ClCompile Include="c_smoke_trail.cpp" />
     <ClCompile Include="c_soundscape.cpp" />
     <ClCompile Include="c_spotlight_end.cpp" />
@@ -661,7 +591,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="c_te.cpp" />
     <ClCompile Include="c_team.cpp" />
     <ClCompile Include="c_tesla.cpp" />
-    <ClCompile Include="c_testtraceline.cpp" />
+    <ClCompile Include="C_TestTraceline.cpp" />
     <ClCompile Include="c_test_proxytoggle.cpp" />
     <ClCompile Include="c_te_armorricochet.cpp" />
     <ClCompile Include="c_te_basebeam.cpp" />
@@ -709,9 +639,10 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="c_vehicle_jeep.cpp" />
     <ClCompile Include="c_vguiscreen.cpp" />
     <ClCompile Include="c_world.cpp" />
-    <ClCompile Include="detailobjectsystem.cpp" />
-    <ClCompile Include="dummyproxy.cpp" />
+    <ClCompile Include="DetailObjectSystem.cpp" />
+    <ClCompile Include="DummyProxy.cpp" />
     <ClCompile Include="EffectsClient.cpp" />
+    <ClCompile Include="entity_client_tools.cpp" />
     <ClCompile Include="episodic\c_prop_coreball.cpp" />
     <ClCompile Include="episodic\c_weapon_hopwire.cpp" />
     <ClCompile Include="episodic\episodic_screenspaceeffects.cpp" />
@@ -816,7 +747,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="ff\vgui\vgui_rootpanel_ff.cpp" />
     <ClCompile Include="ff_discordman.cpp" />
     <ClCompile Include="flashlighteffect.cpp" />
-    <ClCompile Include="functionproxy.cpp" />
+    <ClCompile Include="FunctionProxy.cpp" />
     <ClCompile Include="fx.cpp" />
     <ClCompile Include="fx_blood.cpp" />
     <ClCompile Include="fx_cube.cpp" />
@@ -847,7 +778,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="geiger.cpp" />
     <ClCompile Include="glow_overlay.cpp" />
     <ClCompile Include="history_resource.cpp" />
+    <ClCompile Include="hl2_hud\c_strider.cpp" />
     <ClCompile Include="hl2_hud\c_waterbullet.cpp" />
+    <ClCompile Include="hl2_hud\C_WaterLODControl.cpp" />
     <ClCompile Include="hl2_hud\fx_hl2_tracers.cpp" />
     <ClCompile Include="hltvcamera.cpp" />
     <ClCompile Include="hud.cpp" />
@@ -870,16 +803,22 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="interpolatedvar.cpp" />
     <ClCompile Include="in_camera.cpp" />
     <ClCompile Include="in_joystick.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="in_main.cpp" />
     <ClCompile Include="in_mouse.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="lampbeamproxy.cpp" />
-    <ClCompile Include="lamphaloproxy.cpp" />
+    <ClCompile Include="LampBeamProxy.cpp" />
+    <ClCompile Include="LampHaloProxy.cpp" />
     <ClCompile Include="mapscreen.cpp" />
-    <ClCompile Include="mathproxy.cpp" />
+    <ClCompile Include="MathProxy.cpp" />
     <ClCompile Include="matrixproxy.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="message.cpp" />
@@ -887,7 +826,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="mp3player.cpp" />
     <ClCompile Include="panelmetaclassmgr.cpp" />
     <ClCompile Include="particlemgr.cpp" />
-    <ClCompile Include="particlesphererenderer.cpp" />
+    <ClCompile Include="ParticleSphereRenderer.cpp" />
     <ClCompile Include="particles_attractor.cpp" />
     <ClCompile Include="particles_ez.cpp" />
     <ClCompile Include="particles_localspace.cpp" />
@@ -895,7 +834,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="particle_collision.cpp" />
     <ClCompile Include="particle_litsmokeemitter.cpp" />
     <ClCompile Include="particle_proxies.cpp" />
-    <ClCompile Include="particle_simple3d.cpp" />
+    <ClCompile Include="particle_simple3D.cpp" />
     <ClCompile Include="perfvisualbenchmark.cpp" />
     <ClCompile Include="physics.cpp" />
     <ClCompile Include="physics_main_client.cpp" />
@@ -909,7 +848,10 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="ragdoll.cpp" />
     <ClCompile Include="recvproxy.cpp" />
     <ClCompile Include="rendertexture.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
+      </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ScreenSpaceEffects.cpp" />
     <ClCompile Include="simple_keys.cpp" />
@@ -917,28 +859,30 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="splinepatch.cpp" />
     <ClCompile Include="spritemodel.cpp" />
     <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="texturescrollmaterialproxy.cpp" />
+    <ClCompile Include="TextureScrollMaterialProxy.cpp" />
     <ClCompile Include="text_message.cpp" />
-    <ClCompile Include="timematerialproxy.cpp" />
+    <ClCompile Include="TimeMaterialProxy.cpp" />
     <ClCompile Include="toggletextureproxy.cpp" />
     <ClCompile Include="toolframework_client.cpp" />
     <ClCompile Include="train.cpp" />
-    <ClCompile Include="vgui_basepanel.cpp" />
+    <ClCompile Include="vgui_BasePanel.cpp" />
     <ClCompile Include="vgui_bitmapbutton.cpp" />
     <ClCompile Include="vgui_bitmapimage.cpp" />
-    <ClCompile Include="vgui_bitmappanel.cpp" />
-    <ClCompile Include="vgui_centerstringpanel.cpp" />
-    <ClCompile Include="vgui_consolepanel.cpp" />
-    <ClCompile Include="vgui_debugoverlaypanel.cpp" />
-    <ClCompile Include="vgui_fpspanel.cpp" />
+    <ClCompile Include="vgui_BitmapPanel.cpp" />
+    <ClCompile Include="vgui_CenterStringPanel.cpp" />
+    <ClCompile Include="vgui_ConsolePanel.cpp" />
+    <ClCompile Include="vgui_DebugOverlayPanel.cpp" />
+    <ClCompile Include="vgui_FPSPanel.cpp" />
     <ClCompile Include="vgui_game_viewport.cpp" />
     <ClCompile Include="vgui_grid.cpp" />
     <ClCompile Include="vgui_int.cpp" />
-    <ClCompile Include="vgui_loadingdiscpanel.cpp" />
-    <ClCompile Include="vgui_messagechars.cpp" />
-    <ClCompile Include="vgui_netgraphpanel.cpp" />
+    <ClCompile Include="vgui_LoadingDiscPanel.cpp" />
+    <ClCompile Include="vgui_MessageChars.cpp" />
+    <ClCompile Include="vgui_NetGraphPanel.cpp" />
+    <ClCompile Include="vgui_TextMessagePanel.cpp" />
     <ClCompile Include="view.cpp" />
     <ClCompile Include="ViewConeImage.cpp" />
     <ClCompile Include="view_beams.cpp" />
@@ -951,217 +895,6 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClCompile Include="WorldDimsProxy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\game_shared\hl2\basehlcombatweapon_shared.h" />
-    <ClInclude Include="..\game_shared\hl2\hl2_player_shared.h" />
-    <ClInclude Include="..\game_shared\hl2\hl_movedata.h" />
-    <ClInclude Include="..\public\amd3dx.h" />
-    <ClInclude Include="..\public\appframework\IAppSystem.h" />
-    <ClInclude Include="..\public\basehandle.h" />
-    <ClInclude Include="..\public\basetypes.h" />
-    <ClInclude Include="..\public\bitvec.h" />
-    <ClInclude Include="..\public\bone_accessor.h" />
-    <ClInclude Include="..\public\bone_setup.h" />
-    <ClInclude Include="..\public\bspfile.h" />
-    <ClInclude Include="..\public\bspflags.h" />
-    <ClInclude Include="..\public\bsptreedata.h" />
-    <ClInclude Include="..\public\bumpvects.h" />
-    <ClInclude Include="..\public\cdll_int.h" />
-    <ClInclude Include="..\public\clientstats.h" />
-    <ClInclude Include="..\public\client_class.h" />
-    <ClInclude Include="..\public\client_render_handle.h" />
-    <ClInclude Include="..\public\client_textmessage.h" />
-    <ClInclude Include="..\public\cl_dll\iviewport.h" />
-    <ClInclude Include="..\public\cmodel.h" />
-    <ClInclude Include="..\public\collisionutils.h" />
-    <ClInclude Include="..\public\Color.h" />
-    <ClInclude Include="..\public\commonmacros.h" />
-    <ClInclude Include="..\public\const.h" />
-    <ClInclude Include="..\public\con_nprint.h" />
-    <ClInclude Include="..\public\coordsize.h" />
-    <ClInclude Include="..\public\crtmemdebug.h" />
-    <ClInclude Include="..\public\datamap.h" />
-    <ClInclude Include="..\public\dlight.h" />
-    <ClInclude Include="..\public\dt_common.h" />
-    <ClInclude Include="..\public\dt_recv.h" />
-    <ClInclude Include="..\public\dt_send.h" />
-    <ClInclude Include="..\public\dt_utlvector_common.h" />
-    <ClInclude Include="..\public\dt_utlvector_recv.h" />
-    <ClInclude Include="..\public\edict.h" />
-    <ClInclude Include="..\public\engine\IClientLeafSystem.h" />
-    <ClInclude Include="..\public\engine\ICollideable.h" />
-    <ClInclude Include="..\public\engine\IEngineSound.h" />
-    <ClInclude Include="..\public\engine\IEngineTrace.h" />
-    <ClInclude Include="..\public\engine\ishadowmgr.h" />
-    <ClInclude Include="..\public\engine\IStaticPropMgr.h" />
-    <ClInclude Include="..\public\engine\ivdebugoverlay.h" />
-    <ClInclude Include="..\public\engine\ivmodelinfo.h" />
-    <ClInclude Include="..\public\engine\ivmodelrender.h" />
-    <ClInclude Include="..\public\filesystem.h" />
-    <ClInclude Include="..\public\filesystem_helpers.h" />
-    <ClInclude Include="..\public\gamebspfile.h" />
-    <ClInclude Include="..\public\gametrace.h" />
-    <ClInclude Include="..\public\globalvars_base.h" />
-    <ClInclude Include="..\public\icliententity.h" />
-    <ClInclude Include="..\public\icliententitylist.h" />
-    <ClInclude Include="..\public\iclientnetworkable.h" />
-    <ClInclude Include="..\public\iclientrenderable.h" />
-    <ClInclude Include="..\public\iclientthinkable.h" />
-    <ClInclude Include="..\public\iclientunknown.h" />
-    <ClInclude Include="..\public\icvar.h" />
-    <ClInclude Include="..\public\iefx.h" />
-    <ClInclude Include="..\public\igameevents.h" />
-    <ClInclude Include="..\public\igameresources.h" />
-    <ClInclude Include="..\public\IGameUIFuncs.h" />
-    <ClInclude Include="..\public\ihandleentity.h" />
-    <ClInclude Include="..\public\imapoverview.h" />
-    <ClInclude Include="..\public\inetchannelinfo.h" />
-    <ClInclude Include="..\public\iprediction.h" />
-    <ClInclude Include="..\public\irecipientfilter.h" />
-    <ClInclude Include="..\public\isaverestore.h" />
-    <ClInclude Include="..\public\iscratchpad3d.h" />
-    <ClInclude Include="..\public\iserverentity.h" />
-    <ClInclude Include="..\public\iservernetworkable.h" />
-    <ClInclude Include="..\public\iserverunknown.h" />
-    <ClInclude Include="..\public\ispatialpartition.h" />
-    <ClInclude Include="..\public\istudiorender.h" />
-    <ClInclude Include="..\public\ivrenderview.h" />
-    <ClInclude Include="..\public\keydefs.h" />
-    <ClInclude Include="..\public\materialsystem\imaterial.h" />
-    <ClInclude Include="..\public\materialsystem\imaterialproxy.h" />
-    <ClInclude Include="..\public\materialsystem\imaterialsystem.h" />
-    <ClInclude Include="..\public\materialsystem\imaterialsystemhardwareconfig.h" />
-    <ClInclude Include="..\public\materialsystem\imaterialsystemstub.h" />
-    <ClInclude Include="..\public\materialsystem\imaterialvar.h" />
-    <ClInclude Include="..\public\materialsystem\imesh.h" />
-    <ClInclude Include="..\public\materialsystem\itexture.h" />
-    <ClInclude Include="..\public\materialsystem\MaterialSystemUtil.h" />
-    <ClInclude Include="..\public\mathlib.h" />
-    <ClInclude Include="..\public\networkstringtabledefs.h" />
-    <ClInclude Include="..\public\networkvar.h" />
-    <ClInclude Include="..\public\overlaytext.h" />
-    <ClInclude Include="..\public\pixelwriter.h" />
-    <ClInclude Include="..\public\PlayerState.h" />
-    <ClInclude Include="..\public\protected_things.h" />
-    <ClInclude Include="..\public\rope_physics.h" />
-    <ClInclude Include="..\public\rope_shared.h" />
-    <ClInclude Include="..\public\r_efx.h" />
-    <ClInclude Include="..\public\saverestoretypes.h" />
-    <ClInclude Include="..\public\scratchpad3d.h" />
-    <ClInclude Include="..\public\sentence.h" />
-    <ClInclude Include="..\public\server_class.h" />
-    <ClInclude Include="..\public\shake.h" />
-    <ClInclude Include="..\public\shattersurfacetypes.h" />
-    <ClInclude Include="..\public\simple_physics.h" />
-    <ClInclude Include="..\public\soundchars.h" />
-    <ClInclude Include="..\public\SoundEmitterSystem\isoundemittersystembase.h" />
-    <ClInclude Include="..\public\soundflags.h" />
-    <ClInclude Include="..\public\soundinfo.h" />
-    <ClInclude Include="..\public\string_t.h" />
-    <ClInclude Include="..\public\studio.h" />
-    <ClInclude Include="..\public\surfinfo.h" />
-    <ClInclude Include="..\public\terrainmod.h" />
-    <ClInclude Include="..\public\texture_group_names.h" />
-    <ClInclude Include="..\public\tier0\dbg.h" />
-    <ClInclude Include="..\public\tier0\fasttimer.h" />
-    <ClInclude Include="..\public\tier0\l2cache.h" />
-    <ClInclude Include="..\public\tier0\mem.h" />
-    <ClInclude Include="..\public\tier0\memalloc.h" />
-    <ClInclude Include="..\public\tier0\memdbgoff.h" />
-    <ClInclude Include="..\public\tier0\memdbgon.h" />
-    <ClInclude Include="..\public\tier0\platform.h" />
-    <ClInclude Include="..\public\tier0\vprof.h" />
-    <ClInclude Include="..\public\tier1\bitbuf.h" />
-    <ClInclude Include="..\public\tier1\characterset.h" />
-    <ClInclude Include="..\public\tier1\checksum_md5.h" />
-    <ClInclude Include="..\public\tier1\convar.h" />
-    <ClInclude Include="..\public\tier1\fmtstr.h" />
-    <ClInclude Include="..\public\tier1\interface.h" />
-    <ClInclude Include="..\public\tier1\KeyValues.h" />
-    <ClInclude Include="..\public\tier1\mempool.h" />
-    <ClInclude Include="..\public\tier1\processor_detect.h" />
-    <ClInclude Include="..\public\tier1\rangecheckedvar.h" />
-    <ClInclude Include="..\public\tier1\smartptr.h" />
-    <ClInclude Include="..\public\tier1\stringpool.h" />
-    <ClInclude Include="..\public\tier1\utlbidirectionalset.h" />
-    <ClInclude Include="..\public\tier1\utlbuffer.h" />
-    <ClInclude Include="..\public\tier1\utlfixedlinkedlist.h" />
-    <ClInclude Include="..\public\tier1\utlfixedmemory.h" />
-    <ClInclude Include="..\public\tier1\utlhash.h" />
-    <ClInclude Include="..\public\tier1\utllinkedlist.h" />
-    <ClInclude Include="..\public\tier1\utlmap.h" />
-    <ClInclude Include="..\public\tier1\utlmemory.h" />
-    <ClInclude Include="..\public\tier1\utlmultilist.h" />
-    <ClInclude Include="..\public\tier1\utlpriorityqueue.h" />
-    <ClInclude Include="..\public\tier1\utlqueue.h" />
-    <ClInclude Include="..\public\tier1\utlrbtree.h" />
-    <ClInclude Include="..\public\tier1\utlstack.h" />
-    <ClInclude Include="..\public\tier1\utlsymbol.h" />
-    <ClInclude Include="..\public\tier1\utlvector.h" />
-    <ClInclude Include="..\public\tools\bonelist.h" />
-    <ClInclude Include="..\public\vcollide.h" />
-    <ClInclude Include="..\public\vcollide_parse.h" />
-    <ClInclude Include="..\public\vector.h" />
-    <ClInclude Include="..\public\vector2d.h" />
-    <ClInclude Include="..\public\vector4d.h" />
-    <ClInclude Include="..\public\VGuiMatSurface\IMatSystemSurface.h" />
-    <ClInclude Include="..\public\vgui\Cursor.h" />
-    <ClInclude Include="..\public\vgui\Dar.h" />
-    <ClInclude Include="..\public\vgui\IClientPanel.h" />
-    <ClInclude Include="..\public\vgui\IHTML.h" />
-    <ClInclude Include="..\public\vgui\IImage.h" />
-    <ClInclude Include="..\public\vgui\IInput.h" />
-    <ClInclude Include="..\public\vgui\IInputInternal.h" />
-    <ClInclude Include="..\public\vgui\ILocalize.h" />
-    <ClInclude Include="..\public\vgui\IPanel.h" />
-    <ClInclude Include="..\public\vgui\IScheme.h" />
-    <ClInclude Include="..\public\vgui\ISurface.h" />
-    <ClInclude Include="..\public\vgui\ISystem.h" />
-    <ClInclude Include="..\public\vgui\IVGui.h" />
-    <ClInclude Include="..\public\vgui\KeyCode.h" />
-    <ClInclude Include="..\public\vgui\MouseCode.h" />
-    <ClInclude Include="..\public\vgui\VGUI.h" />
-    <ClInclude Include="..\public\vgui_controls\AnimationController.h" />
-    <ClInclude Include="..\public\vgui_controls\Button.h" />
-    <ClInclude Include="..\public\vgui_controls\ComboBox.h" />
-    <ClInclude Include="..\public\vgui_controls\Controls.h" />
-    <ClInclude Include="..\public\vgui_controls\EditablePanel.h" />
-    <ClInclude Include="..\public\vgui_controls\FocusNavGroup.h" />
-    <ClInclude Include="..\public\vgui_controls\HTML.h" />
-    <ClInclude Include="..\public\vgui_controls\Image.h" />
-    <ClInclude Include="..\public\vgui_controls\ImageList.h" />
-    <ClInclude Include="..\public\vgui_controls\ImagePanel.h" />
-    <ClInclude Include="..\public\vgui_controls\Label.h" />
-    <ClInclude Include="..\public\vgui_controls\ListPanel.h" />
-    <ClInclude Include="..\public\vgui_controls\Menu.h" />
-    <ClInclude Include="..\public\vgui_controls\MenuItem.h" />
-    <ClInclude Include="..\public\vgui_controls\Panel.h" />
-    <ClInclude Include="..\public\vgui_controls\PanelAnimationVar.h" />
-    <ClInclude Include="..\public\vgui_controls\PanelListPanel.h" />
-    <ClInclude Include="..\public\vgui_controls\PHandle.h" />
-    <ClInclude Include="..\public\vgui_controls\RichText.h" />
-    <ClInclude Include="..\public\vgui_controls\ScrollBar.h" />
-    <ClInclude Include="..\public\vgui_controls\SectionedListPanel.h" />
-    <ClInclude Include="..\public\vgui_controls\TextEntry.h" />
-    <ClInclude Include="..\public\vgui_controls\TextImage.h" />
-    <ClInclude Include="..\public\vgui_controls\TreeView.h" />
-    <ClInclude Include="..\public\vgui_controls\WizardPanel.h" />
-    <ClInclude Include="..\public\vgui_controls\WizardSubPanel.h" />
-    <ClInclude Include="..\public\view_shared.h" />
-    <ClInclude Include="..\public\vmatrix.h" />
-    <ClInclude Include="..\public\vphysics\collision_set.h" />
-    <ClInclude Include="..\public\vphysics\constraints.h" />
-    <ClInclude Include="..\public\vphysics\friction.h" />
-    <ClInclude Include="..\public\vphysics\object_hash.h" />
-    <ClInclude Include="..\public\vphysics_interface.h" />
-    <ClInclude Include="..\public\vplane.h" />
-    <ClInclude Include="..\public\vstdlib\ICommandLine.h" />
-    <ClInclude Include="..\public\vstdlib\IKeyValuesSystem.h" />
-    <ClInclude Include="..\public\vstdlib\random.h" />
-    <ClInclude Include="..\public\vstdlib\strtools.h" />
-    <ClInclude Include="..\public\vstdlib\vstdlib.h" />
-    <ClInclude Include="..\public\vtf\vtf.h" />
-    <ClInclude Include="..\public\worldsize.h" />
-    <ClInclude Include="..\public\zip_uncompressed.h" />
     <ClInclude Include="..\game_shared\activitylist.h" />
     <ClInclude Include="..\game_shared\ai_activity.h" />
     <ClInclude Include="..\game_shared\ai_debug_shared.h" />
@@ -1181,6 +914,10 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="..\game_shared\choreoevent.h" />
     <ClInclude Include="..\game_shared\choreoscene.h" />
     <ClInclude Include="..\game_shared\collisionproperty.h" />
+    <ClInclude Include="..\game_shared\cstrike\basecsgrenade_projectile.h" />
+    <ClInclude Include="..\game_shared\cstrike\fx_cs_shared.h" />
+    <ClInclude Include="..\game_shared\cstrike\weapon_flashbang.h" />
+    <ClInclude Include="..\game_shared\cstrike\weapon_hegrenade.h" />
     <ClInclude Include="..\game_shared\death_pose.h" />
     <ClInclude Include="..\game_shared\decals.h" />
     <ClInclude Include="..\game_shared\effect_color_tables.h" />
@@ -1234,8 +971,11 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="..\game_shared\gamestringpool.h" />
     <ClInclude Include="..\game_shared\gamevars_shared.h" />
     <ClInclude Include="..\game_shared\groundlink.h" />
+    <ClInclude Include="..\game_shared\hl2\basehlcombatweapon_shared.h" />
     <ClInclude Include="..\game_shared\hl2\citadel_effects_shared.h" />
     <ClInclude Include="..\game_shared\hl2\env_headcrabcanister_shared.h" />
+    <ClInclude Include="..\game_shared\hl2\hl2_player_shared.h" />
+    <ClInclude Include="..\game_shared\hl2\hl_movedata.h" />
     <ClInclude Include="..\game_shared\IEffects.h" />
     <ClInclude Include="..\game_shared\igamemovement.h" />
     <ClInclude Include="..\game_shared\igamesystem.h" />
@@ -1280,12 +1020,14 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="..\game_shared\singleplay_gamerules.h" />
     <ClInclude Include="..\game_shared\solidsetdefaults.h" />
     <ClInclude Include="..\game_shared\soundenvelope.h" />
-    <ClInclude Include="..\game_shared\Sprite.h" />
+    <ClInclude Include="..\game_shared\sprite.h" />
     <ClInclude Include="..\game_shared\SpriteTrail.h" />
     <ClInclude Include="..\game_shared\sun_shared.h" />
     <ClInclude Include="..\game_shared\takedamageinfo.h" />
     <ClInclude Include="..\game_shared\tempentity.h" />
     <ClInclude Include="..\game_shared\terrainmodmgr_shared.h" />
+    <ClInclude Include="..\game_shared\tf2\tf_gamemovement_sapper.h" />
+    <ClInclude Include="..\game_shared\tf2\weapon_objectselection.h" />
     <ClInclude Include="..\game_shared\touchlink.h" />
     <ClInclude Include="..\game_shared\usercmd.h" />
     <ClInclude Include="..\game_shared\usermessages.h" />
@@ -1299,20 +1041,244 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="..\game_shared\vphysics_sound.h" />
     <ClInclude Include="..\game_shared\weapon_parse.h" />
     <ClInclude Include="..\game_shared\weapon_proficiency.h" />
+    <ClInclude Include="..\Public\amd3dx.h" />
+    <ClInclude Include="..\public\appframework\IAppSystem.h" />
+    <ClInclude Include="..\public\basehandle.h" />
+    <ClInclude Include="..\Public\basetypes.h" />
+    <ClInclude Include="..\Public\bitvec.h" />
+    <ClInclude Include="..\public\bone_accessor.h" />
+    <ClInclude Include="..\public\bone_setup.h" />
+    <ClInclude Include="..\Public\BSPFILE.H" />
+    <ClInclude Include="..\Public\bspflags.h" />
+    <ClInclude Include="..\Public\BSPTreeData.h" />
+    <ClInclude Include="..\Public\bumpvects.h" />
+    <ClInclude Include="..\Public\cache_user.h" />
+    <ClInclude Include="..\Public\cdll_int.h" />
+    <ClInclude Include="..\Public\clientstats.h" />
+    <ClInclude Include="..\Public\client_class.h" />
+    <ClInclude Include="..\public\client_render_handle.h" />
+    <ClInclude Include="..\public\client_textmessage.h" />
+    <ClInclude Include="..\public\cl_dll\iviewport.h" />
+    <ClInclude Include="..\Public\cmodel.h" />
+    <ClInclude Include="..\Public\CollisionUtils.h" />
+    <ClInclude Include="..\public\Color.h" />
+    <ClInclude Include="..\Public\commonmacros.h" />
+    <ClInclude Include="..\public\compressed_light_cube.h" />
+    <ClInclude Include="..\public\compressed_vector.h" />
+    <ClInclude Include="..\Public\const.h" />
+    <ClInclude Include="..\public\con_nprint.h" />
+    <ClInclude Include="..\Public\coordsize.h" />
+    <ClInclude Include="..\Public\crtmemdebug.h" />
+    <ClInclude Include="..\Public\datamap.h" />
+    <ClInclude Include="..\Public\dlight.h" />
+    <ClInclude Include="..\public\dt_common.h" />
+    <ClInclude Include="..\public\dt_recv.h" />
+    <ClInclude Include="..\public\dt_send.h" />
+    <ClInclude Include="..\public\dt_utlvector_common.h" />
+    <ClInclude Include="..\public\dt_utlvector_recv.h" />
+    <ClInclude Include="..\Public\edict.h" />
+    <ClInclude Include="..\public\engine\IClientLeafSystem.h" />
+    <ClInclude Include="..\public\engine\ICollideable.h" />
+    <ClInclude Include="..\Public\engine\IEngineSound.h" />
+    <ClInclude Include="..\public\engine\IEngineTrace.h" />
+    <ClInclude Include="..\Public\engine\IShadowMgr.h" />
+    <ClInclude Include="..\public\engine\IStaticPropMgr.h" />
+    <ClInclude Include="..\Public\engine\ivdebugoverlay.h" />
+    <ClInclude Include="..\public\engine\IVEngineCache.h" />
+    <ClInclude Include="..\public\engine\ivmodelinfo.h" />
+    <ClInclude Include="..\Public\engine\IVModelRender.h" />
+    <ClInclude Include="..\Public\FileSystem.h" />
+    <ClInclude Include="..\public\filesystem_helpers.h" />
+    <ClInclude Include="..\Public\GameBSPFile.h" />
+    <ClInclude Include="..\public\gametrace.h" />
+    <ClInclude Include="..\public\globalvars_base.h" />
+    <ClInclude Include="..\Public\icliententity.h" />
+    <ClInclude Include="..\Public\icliententitylist.h" />
+    <ClInclude Include="..\public\iclientnetworkable.h" />
+    <ClInclude Include="..\Public\iclientrenderable.h" />
+    <ClInclude Include="..\public\iclientthinkable.h" />
+    <ClInclude Include="..\public\iclientunknown.h" />
+    <ClInclude Include="..\Public\icvar.h" />
+    <ClInclude Include="..\Public\iefx.h" />
+    <ClInclude Include="..\Public\ienginevgui.h" />
+    <ClInclude Include="..\public\igameevents.h" />
+    <ClInclude Include="..\public\igameresources.h" />
+    <ClInclude Include="..\public\IGameUIFuncs.h" />
+    <ClInclude Include="..\public\ihandleentity.h" />
+    <ClInclude Include="..\Public\ImageLoader.h" />
+    <ClInclude Include="..\public\imapoverview.h" />
+    <ClInclude Include="..\public\inetchannelinfo.h" />
+    <ClInclude Include="..\public\interpolatortypes.h" />
+    <ClInclude Include="..\Public\iprediction.h" />
+    <ClInclude Include="..\public\irecipientfilter.h" />
+    <ClInclude Include="..\public\isaverestore.h" />
+    <ClInclude Include="..\public\iscratchpad3d.h" />
+    <ClInclude Include="..\Public\iserverentity.h" />
+    <ClInclude Include="..\public\iservernetworkable.h" />
+    <ClInclude Include="..\public\iserverunknown.h" />
+    <ClInclude Include="..\Public\ISpatialPartition.h" />
+    <ClInclude Include="..\Public\IStudioRender.h" />
+    <ClInclude Include="..\Public\ivguicenterprint.h" />
+    <ClInclude Include="..\Public\ivrenderview.h" />
+    <ClInclude Include="..\Public\keydefs.h" />
+    <ClInclude Include="..\public\materialsystem\imaterial.h" />
+    <ClInclude Include="..\public\materialsystem\imaterialproxy.h" />
+    <ClInclude Include="..\public\materialsystem\imaterialsystem.h" />
+    <ClInclude Include="..\public\materialsystem\imaterialsystemhardwareconfig.h" />
+    <ClInclude Include="..\public\materialsystem\imaterialsystemstub.h" />
+    <ClInclude Include="..\public\materialsystem\imaterialvar.h" />
+    <ClInclude Include="..\public\materialsystem\imesh.h" />
+    <ClInclude Include="..\public\materialsystem\itexture.h" />
+    <ClInclude Include="..\public\materialsystem\MaterialSystemUtil.h" />
+    <ClInclude Include="..\Public\MATHLIB.H" />
+    <ClInclude Include="..\Public\model_types.h" />
+    <ClInclude Include="..\Public\mouthinfo.h" />
+    <ClInclude Include="..\Public\NetworkStringTableDefs.h" />
+    <ClInclude Include="..\public\networkvar.h" />
+    <ClInclude Include="..\Public\overlaytext.h" />
+    <ClInclude Include="..\Public\PixelWriter.h" />
+    <ClInclude Include="..\public\PlayerState.h" />
+    <ClInclude Include="..\public\protected_things.h" />
+    <ClInclude Include="..\Public\rope_physics.h" />
+    <ClInclude Include="..\Public\rope_shared.h" />
+    <ClInclude Include="..\Public\r_efx.h" />
+    <ClInclude Include="..\Public\s3_intrf.h" />
+    <ClInclude Include="..\public\saverestoretypes.h" />
+    <ClInclude Include="..\Public\ScratchPad3D.h" />
     <ClInclude Include="..\public\ScratchPadUtils.h" />
-    <ClInclude Include="..\public\stringregistry.h" />
+    <ClInclude Include="..\Public\sentence.h" />
+    <ClInclude Include="..\Public\server_class.h" />
+    <ClInclude Include="..\Public\shake.h" />
+    <ClInclude Include="..\Public\shattersurfacetypes.h" />
+    <ClInclude Include="..\Public\simple_physics.h" />
+    <ClInclude Include="..\public\soundchars.h" />
+    <ClInclude Include="..\Public\soundemittersystem\isoundemittersystembase.h" />
+    <ClInclude Include="..\Public\soundflags.h" />
+    <ClInclude Include="..\public\soundinfo.h" />
+    <ClInclude Include="..\Public\StringRegistry.h" />
+    <ClInclude Include="..\Public\string_t.h" />
+    <ClInclude Include="..\Public\studio.h" />
+    <ClInclude Include="..\Public\surfinfo.h" />
+    <ClInclude Include="..\Public\terrainmod.h" />
+    <ClInclude Include="..\public\texture_group_names.h" />
+    <ClInclude Include="..\Public\TGALoader.h" />
+    <ClInclude Include="..\public\tgawriter.h" />
+    <ClInclude Include="..\public\tier0\dbg.h" />
+    <ClInclude Include="..\public\tier0\fasttimer.h" />
+    <ClInclude Include="..\public\tier0\l2cache.h" />
+    <ClInclude Include="..\public\tier0\mem.h" />
+    <ClInclude Include="..\public\tier0\memalloc.h" />
+    <ClInclude Include="..\public\tier0\memdbgoff.h" />
+    <ClInclude Include="..\public\tier0\memdbgon.h" />
+    <ClInclude Include="..\public\tier0\platform.h" />
+    <ClInclude Include="..\public\tier0\vprof.h" />
+    <ClInclude Include="..\public\tier1\bitbuf.h" />
+    <ClInclude Include="..\public\tier1\characterset.h" />
+    <ClInclude Include="..\public\tier1\checksum_md5.h" />
+    <ClInclude Include="..\public\tier1\convar.h" />
+    <ClInclude Include="..\public\tier1\datalru.h" />
+    <ClInclude Include="..\public\tier1\fmtstr.h" />
+    <ClInclude Include="..\public\tier1\interface.h" />
+    <ClInclude Include="..\public\tier1\KeyValues.h" />
+    <ClInclude Include="..\public\tier1\mempool.h" />
+    <ClInclude Include="..\public\tier1\processor_detect.h" />
+    <ClInclude Include="..\public\tier1\rangecheckedvar.h" />
+    <ClInclude Include="..\public\tier1\smartptr.h" />
+    <ClInclude Include="..\public\tier1\stringpool.h" />
+    <ClInclude Include="..\public\tier1\utlbidirectionalset.h" />
+    <ClInclude Include="..\public\tier1\utlbuffer.h" />
     <ClInclude Include="..\public\tier1\utldict.h" />
+    <ClInclude Include="..\public\tier1\utlfixedlinkedlist.h" />
+    <ClInclude Include="..\public\tier1\utlfixedmemory.h" />
+    <ClInclude Include="..\public\tier1\utlhash.h" />
+    <ClInclude Include="..\public\tier1\utllinkedlist.h" />
+    <ClInclude Include="..\public\tier1\utlmap.h" />
+    <ClInclude Include="..\public\tier1\utlmemory.h" />
+    <ClInclude Include="..\public\tier1\utlmultilist.h" />
+    <ClInclude Include="..\public\tier1\utlpriorityqueue.h" />
+    <ClInclude Include="..\public\tier1\utlqueue.h" />
+    <ClInclude Include="..\public\tier1\utlrbtree.h" />
+    <ClInclude Include="..\public\tier1\utlstack.h" />
+    <ClInclude Include="..\public\tier1\utlsymbol.h" />
+    <ClInclude Include="..\public\tier1\utlvector.h" />
+    <ClInclude Include="..\public\tools\bonelist.h" />
+    <ClInclude Include="..\Public\vallocator.h" />
+    <ClInclude Include="..\Public\vcollide.h" />
+    <ClInclude Include="..\Public\vcollide_parse.h" />
+    <ClInclude Include="..\Public\vector.h" />
+    <ClInclude Include="..\Public\vector2d.h" />
+    <ClInclude Include="..\Public\vector4d.h" />
+    <ClInclude Include="..\public\VGuiMatSurface\IMatSystemSurface.h" />
+    <ClInclude Include="..\public\vgui\Cursor.h" />
+    <ClInclude Include="..\public\vgui\Dar.h" />
+    <ClInclude Include="..\public\vgui\IClientPanel.h" />
+    <ClInclude Include="..\public\vgui\IHTML.h" />
+    <ClInclude Include="..\public\vgui\IImage.h" />
+    <ClInclude Include="..\public\vgui\IInput.h" />
+    <ClInclude Include="..\public\vgui\IInputInternal.h" />
+    <ClInclude Include="..\public\vgui\ILocalize.h" />
+    <ClInclude Include="..\public\vgui\IPanel.h" />
+    <ClInclude Include="..\public\vgui\IScheme.h" />
+    <ClInclude Include="..\public\vgui\ISurface.h" />
+    <ClInclude Include="..\public\vgui\ISystem.h" />
+    <ClInclude Include="..\public\vgui\IVGui.h" />
+    <ClInclude Include="..\public\vgui\KeyCode.h" />
+    <ClInclude Include="..\public\vgui\MessageMap.h" />
+    <ClInclude Include="..\public\vgui\MouseCode.h" />
+    <ClInclude Include="..\public\vgui\VGUI.h" />
+    <ClInclude Include="..\public\vgui_controls\AnimationController.h" />
+    <ClInclude Include="..\public\vgui_controls\Button.h" />
+    <ClInclude Include="..\public\vgui_controls\ComboBox.h" />
+    <ClInclude Include="..\public\vgui_controls\Controls.h" />
+    <ClInclude Include="..\public\vgui_controls\EditablePanel.h" />
+    <ClInclude Include="..\public\vgui_controls\FocusNavGroup.h" />
+    <ClInclude Include="..\public\vgui_controls\HTML.h" />
+    <ClInclude Include="..\public\vgui_controls\Image.h" />
+    <ClInclude Include="..\public\vgui_controls\ImageList.h" />
+    <ClInclude Include="..\public\vgui_controls\ImagePanel.h" />
+    <ClInclude Include="..\public\vgui_controls\Label.h" />
+    <ClInclude Include="..\public\vgui_controls\ListPanel.h" />
+    <ClInclude Include="..\public\vgui_controls\Menu.h" />
+    <ClInclude Include="..\public\vgui_controls\MenuItem.h" />
+    <ClInclude Include="..\public\vgui_controls\Panel.h" />
+    <ClInclude Include="..\public\vgui_controls\PanelAnimationVar.h" />
+    <ClInclude Include="..\public\vgui_controls\PanelListPanel.h" />
+    <ClInclude Include="..\public\vgui_controls\PHandle.h" />
+    <ClInclude Include="..\public\vgui_controls\RichText.h" />
+    <ClInclude Include="..\public\vgui_controls\ScrollBar.h" />
+    <ClInclude Include="..\public\vgui_controls\SectionedListPanel.h" />
+    <ClInclude Include="..\public\vgui_controls\TextEntry.h" />
+    <ClInclude Include="..\public\vgui_controls\TextImage.h" />
+    <ClInclude Include="..\public\vgui_controls\TreeView.h" />
+    <ClInclude Include="..\public\vgui_controls\WizardPanel.h" />
+    <ClInclude Include="..\public\vgui_controls\WizardSubPanel.h" />
+    <ClInclude Include="..\Public\view_shared.h" />
+    <ClInclude Include="..\Public\vmatrix.h" />
+    <ClInclude Include="..\public\vphysics\collision_set.h" />
+    <ClInclude Include="..\public\vphysics\constraints.h" />
+    <ClInclude Include="..\public\vphysics\friction.h" />
+    <ClInclude Include="..\public\vphysics\object_hash.h" />
+    <ClInclude Include="..\Public\vphysics_interface.h" />
+    <ClInclude Include="..\Public\vplane.h" />
+    <ClInclude Include="..\public\vstdlib\ICommandLine.h" />
+    <ClInclude Include="..\public\vstdlib\IKeyValuesSystem.h" />
+    <ClInclude Include="..\public\vstdlib\random.h" />
+    <ClInclude Include="..\public\vstdlib\strtools.h" />
+    <ClInclude Include="..\public\vstdlib\vstdlib.h" />
+    <ClInclude Include="..\public\vtf\vtf.h" />
+    <ClInclude Include="..\Public\worldsize.h" />
+    <ClInclude Include="..\public\zip_uncompressed.h" />
     <ClInclude Include="animationlayer.h" />
-    <ClInclude Include="baseanimatedtextureproxy.h" />
+    <ClInclude Include="BaseAnimatedTextureProxy.h" />
     <ClInclude Include="beamdraw.h" />
     <ClInclude Include="bone_merge_cache.h" />
     <ClInclude Include="cbase.h" />
     <ClInclude Include="cdll_client_int.h" />
     <ClInclude Include="cdll_convar.h" />
     <ClInclude Include="cdll_util.h" />
-    <ClInclude Include="clienteffectprecachesystem.h" />
+    <ClInclude Include="ClientEffectPrecacheSystem.h" />
     <ClInclude Include="cliententitylist.h" />
-    <ClInclude Include="clientleafsystem.h" />
+    <ClInclude Include="ClientLeafSystem.h" />
     <ClInclude Include="clientmode.h" />
     <ClInclude Include="clientmode_shared.h" />
     <ClInclude Include="clientsideeffects.h" />
@@ -1320,7 +1286,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="client_thinklist.h" />
     <ClInclude Include="cl_animevent.h" />
     <ClInclude Include="cl_mat_stub.h" />
-    <ClInclude Include="c_ai_basenpc.h" />
+    <ClInclude Include="cstrike\fx_cs_blood.h" />
+    <ClInclude Include="cstrike\hud_radar.h" />
+    <ClInclude Include="c_AI_BaseNPC.h" />
     <ClInclude Include="c_baseanimating.h" />
     <ClInclude Include="c_baseanimatingoverlay.h" />
     <ClInclude Include="c_basecombatcharacter.h" />
@@ -1364,7 +1332,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="c_vguiscreen.h" />
     <ClInclude Include="c_weapon__stubs.h" />
     <ClInclude Include="c_world.h" />
-    <ClInclude Include="detailobjectsystem.h" />
+    <ClInclude Include="DetailObjectSystem.h" />
     <ClInclude Include="enginesprite.h" />
     <ClInclude Include="episodic\episodic_screenspaceeffects.h" />
     <ClInclude Include="ff\clientmode_ff.h" />
@@ -1426,7 +1394,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="ff_discordman.h" />
     <ClInclude Include="flashlighteffect.h" />
     <ClInclude Include="fontabc.h" />
-    <ClInclude Include="functionproxy.h" />
+    <ClInclude Include="FunctionProxy.h" />
     <ClInclude Include="fx.h" />
     <ClInclude Include="fx_blood.h" />
     <ClInclude Include="fx_discreetline.h" />
@@ -1454,6 +1422,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="game_controls\vguitextwindow.h" />
     <ClInclude Include="glow_overlay.h" />
     <ClInclude Include="history_resource.h" />
+    <ClInclude Include="hl1\hl1_clientmode.h" />
     <ClInclude Include="hl2_hud\clientmode_hlnormal.h" />
     <ClInclude Include="hl2_hud\c_basehelicopter.h" />
     <ClInclude Include="hl2_hud\c_basehlcombatweapon.h" />
@@ -1473,9 +1442,9 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="hud_pdump.h" />
     <ClInclude Include="hud_vehicle.h" />
     <ClInclude Include="iclassmap.h" />
-    <ClInclude Include="icliententityinternal.h" />
+    <ClInclude Include="IClientEntityInternal.h" />
     <ClInclude Include="iclientmode.h" />
-    <ClInclude Include="iclientshadowmgr.h" />
+    <ClInclude Include="IClientShadowMgr.h" />
     <ClInclude Include="iclientvehicle.h" />
     <ClInclude Include="iconsole.h" />
     <ClInclude Include="idebugoverlaypanel.h" />
@@ -1504,7 +1473,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="panelmetaclassmgr.h" />
     <ClInclude Include="particledraw.h" />
     <ClInclude Include="particlemgr.h" />
-    <ClInclude Include="particlesphererenderer.h" />
+    <ClInclude Include="ParticleSphereRenderer.h" />
     <ClInclude Include="particles_attractor.h" />
     <ClInclude Include="particles_ez.h" />
     <ClInclude Include="particles_localspace.h" />
@@ -1513,7 +1482,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="particle_iterators.h" />
     <ClInclude Include="particle_litsmokeemitter.h" />
     <ClInclude Include="particle_prototype.h" />
-    <ClInclude Include="particle_simple3d.h" />
+    <ClInclude Include="particle_simple3D.h" />
     <ClInclude Include="particle_util.h" />
     <ClInclude Include="perfvisualbenchmark.h" />
     <ClInclude Include="physics.h" />
@@ -1523,7 +1492,7 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="prediction_private.h" />
     <ClInclude Include="proxyentity.h" />
     <ClInclude Include="ragdoll.h" />
-    <ClInclude Include="ragdollexplosionenumerator.h" />
+    <ClInclude Include="RagdollExplosionEnumerator.h" />
     <ClInclude Include="recvproxy.h" />
     <ClInclude Include="rendertexture.h" />
     <ClInclude Include="ScreenSpaceEffects.h" />
@@ -1533,19 +1502,20 @@ if exist "%FortressForeverBin%" copy "$(TargetDir)/client.pdb" "%FortressForever
     <ClInclude Include="TeamBitmapImage.h" />
     <ClInclude Include="tempent.h" />
     <ClInclude Include="text_message.h" />
+    <ClInclude Include="tf2_hud\vgui_healthbar.h" />
     <ClInclude Include="timedevent.h" />
     <ClInclude Include="toggletextureproxy.h" />
     <ClInclude Include="toolframework_client.h" />
     <ClInclude Include="vguicenterprint.h" />
-    <ClInclude Include="vgui_basepanel.h" />
+    <ClInclude Include="vgui_BasePanel.h" />
     <ClInclude Include="vgui_bitmapbutton.h" />
-    <ClInclude Include="vgui_bitmapimage.h" />
-    <ClInclude Include="vgui_bitmappanel.h" />
-    <ClInclude Include="vgui_entityimagepanel.h" />
-    <ClInclude Include="vgui_entitypanel.h" />
+    <ClInclude Include="vgui_BitmapImage.h" />
+    <ClInclude Include="vgui_BitmapPanel.h" />
+    <ClInclude Include="vgui_EntityImagePanel.h" />
+    <ClInclude Include="vgui_EntityPanel.h" />
     <ClInclude Include="vgui_grid.h" />
     <ClInclude Include="vgui_helpers.h" />
-    <ClInclude Include="vgui_imagehealthpanel.h" />
+    <ClInclude Include="vgui_ImageHealthPanel.h" />
     <ClInclude Include="vgui_int.h" />
     <ClInclude Include="view.h" />
     <ClInclude Include="ViewConeImage.h" />

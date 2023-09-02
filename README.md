@@ -2,46 +2,33 @@
 
 A Team Fortress mod on the Source Engine (Source SDK 2006)
 
+# <ins>**WARNING**</ins>
+**USE THIS SETUP AT YOUR OWN RISK.**
+
+THE FORTRESS FOREVER LIBRARIES CURRENTLY **DO NOT** COMPILE WITH THIS SETUP, BECAUSE OF UNRESOLVED EXTERNALS `__dtol3` AND `__ftol3`.
+
+THE ONLY WAY TO COMPILE THE LIBRARIES WITH THIS SETUP IS TO USE THE `/FORCE:UNRESOLVED` PARAMETER, WHICH COULD PRODUCE BROKEN LIBRARIES.
+
 ### Compiling
 
-Fortress Forever must be compiled using Visual C++ 2005. The following instructions are an updated version of Microsoft's old [Using Visual C++ 2005 Express Edition with the Microsoft Platform SDK](https://web.archive.org/web/20070210205738/http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/) guide
+Fortress Forever can now be compiled using Visual Studio 2022. The following instructions show how to set up a Visual Studio 2022 development environment for Fortress Forever.
 
-1. **Install Visual C++ 2005**
-  * Download and install Visual Studio C++ 2005 Express Edition [from .IMG](http://go.microsoft.com/fwlink/?linkid=54766) or [from .ISO](http://go.microsoft.com/fwlink/?linkid=57034) (or the full version if you have it)
-  * Download and install the [Visual Studio 2005 Express Editions Service Pack 1](https://www.catalog.update.microsoft.com/Search.aspx?q=Visual%20Studio%202005%20Express%20Editions%20Service%20Pack%201)
-  * Download and install the [Visual Studio 2005 Service Pack 1 Update for Windows Vista](https://www.catalog.update.microsoft.com/Search.aspx?q=Visual%20Studio%202005%20Service%20Pack%201%20Update%20for%20Windows%20Vista)
+1. **Install Visual Studio 2022**
+  * Download and install Visual Studio 2022 Community Edition [from here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022).
 2. **Install the Microsoft Platform SDK**
   * Download and install the [Windows Server 2003 SP1 Platform SDK](https://www.microsoft.com/en-us/download/details.aspx?id=15656)
     * You only need to install *Microsoft Windows Core SDK*
-3. **Configure Visual C++ 2005**
-  * Open Visual Studio C++ 2005 (it's suggested to right click -> *Run as administrator*)
-  * Update *VC++ Directories* in the *Projects and Solutions* section of the *Tools* -> *Options* dialog box. 
-    * Add the paths to the appropriate subsection:
-      * Executable files: `C:\Program Files\Microsoft Platform SDK\Bin`
-      * Include files: `C:\Program Files\Microsoft Platform SDK\Include`
-      * Library files: `C:\Program Files\Microsoft Platform SDK\Lib`
-    * **Note:** Alternatively, you can update the Visual C++ Directories by modifying the `VCProjectEngine.dll.express.config` file located in the `\vc\vcpackages` subdirectory of the Visual C++ Express install location. Please make sure that you also delete the file `vccomponents.dat` located in the `%USERPROFILE%\Local Settings\Application Data\Microsoft\VCExpress\8.0` directory if it exists before restarting Visual C++ Express Edition. 
-  * Update the `corewin_express.vsprops` file found in `C:\Program Files (x86)\Microsoft Visual Studio 8\VC\VCProjectDefaults`.
-    * Edit `corewin_express.vsprops` in the text editor of your choice.
-      * Change the string that reads: 
-      `AdditionalDependencies="kernel32.lib"`
-      to
-      `AdditionalDependencies="kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib"`
-    * **Note:** You'll probably need to change the file permissions to be able to edit the corewin_express.vsprops file. To do so, right click `corewin_express.vsprops` and select *Properties*. Open the *Security* tab and click the *Edit...* button. Select the *Users (computername\User)* group and check *Write* in the *Allow* column, then click *OK* twice
-  * Restart Visual C++ 2005
-4. **Build Fortress Forever**
-  * Open `Game_Scratch-2005.sln` and run *Build Solution*
+3. **Install Windows SDK**
+  * Download and install the Windows SDK [Installer](https://go.microsoft.com/fwlink/?linkid=2237387) or [from .ISO](https://go.microsoft.com/fwlink/?linkid=2237510)
+4. **Download the VS 2005 includes and libraries**
+  * Download the [.rar file](https://drive.google.com/file/d/1HPKgTVpzB5pSSQhMJ_J8i2uP-JgO9jyA/view?usp=sharing) and extract its contents to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC`.
+5. **Build Fortress Forever**
+  * <ins>**WARNING**: ANOTHER REMINDER THAT FORTRESS FOREVER LIBRARIES CURRENTLY **DO NOT** COMPILE WITH THIS SETUP WITHOUT THE `/FORCE:UNRESOLVED` PARAMETER, WHICH COULD RESULT IN BROKEN DLLS.</ins>
+
+  * Open `Game_Scratch-2005.sln`, select `server_ff` on the left hand side and click on Properties.
+  * Click on Linker and set the value of `Force File Output` property to `Undefined Symbol Only (/FORCE:UNRESOLVED)` using the drop down menu, click on OK. ![example](https://i.imgur.com/jK0GAXK.png)
+  * Run *Build Solution*
   * **Note:** The compiled .dlls will automatically get copied to `<SteamDirectory>\SteamApps\common\Fortress Forever\FortressForever\bin`
-
-#### Addendum: Registering VC++ 2005 Express
-
-The Microsoft registration servers for VC++ 2005 Express edition are no longer online, so the only way to register your copy is to edit the registry. Simply save the following text as `register_vc.reg` and run it:
-```
-Windows Registry Editor Version 5.00
-
-[HKEY_CURRENT_USER\Software\Microsoft\VCExpress\8.0\Registration]
-"Params"="487A8D4D0000000001000000010000009F6A4D0000000000"
-```
 
 ### Debugging
 To start the game from within VS debugger, right click `client_ff` or `server_ff` project (whichever you are working on)
@@ -60,11 +47,11 @@ Here is an example with nonstandard steam path: ![example](https://i.imgur.com/9
 #### Debugging an active session
 * Compile using the *Debug FF* configuration
 * Launch Fortress Forever (need to use the launch parameter `-allowdebug` in steam)
-* In Visual C++, go to *Debug* -> *Attach to Process*
+* In Visual Studio, go to *Debug* -> *Attach to Process*
 * Find `hl2.exe` in the list and click *Attach*
 
 #### Debugging a crash log
-* Open the crash log (.dmp/.mdmp) in Visual C++ 2005
+* Open the crash log (.dmp/.mdmp) in Visual Studio 2022
 * Go to *Debug* -> *Start Debugging*
   * Check the output window to see if symbols were successfully loaded for `fortressforever\bin\server.dll` and `fortressforever\bin\client.dll`. If not, you'll probably need to copy the dump file to a directory containing the correct .dll and .pdb files for the version of the game that the crash occurred on.
   * If the crash points to *Disassembly*, the crash log will likely not be of much use, as that usually means that the crash occurred somewhere in the Source engine code that we don't have access to. However, it's a good idea to check the *Call Stack* window to see if the crash originated in FF code.
