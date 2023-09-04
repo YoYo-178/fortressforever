@@ -48,8 +48,8 @@
     <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>$(PATH);$(FrameworkDir)$(FrameworkVersion);$(VSInstallDir);$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(VCInstallDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VCInstallDir)PlatformSDK\bin;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(VCInstallDir)PlatformSDK\include;$(FrameworkSDKDir)include;$(VCInstallDir)FF\include;C:\Program Files\Microsoft Platform SDK\Include\crt;C:\Program Files\Microsoft Platform SDK\Include;$(IncludePath)</IncludePath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(VCInstallDir)FF\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
     <TargetName>server</TargetName>
   </PropertyGroup>

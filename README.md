@@ -6,20 +6,21 @@ A Team Fortress mod on the Source Engine (Source SDK 2006)
 **USE THIS SETUP AT YOUR OWN RISK.**
 THE LIBRARIES PRODUCED BY THIS SETUP **COULD BE UNSTABLE**.
 
+[OR GO BACK TO THE ORIGINAL FORTRESS FOREVER REPO TO COMPILE WITH VISUAL C++ 2005 EXPRESS EDITION](https://github.com/fortressforever/fortressforever/)
+
 ### Compiling
+
+## **Instructions are based off the original [Fortress Forever GitHub repo](https://github.com/fortressforever/fortressforever/).**
 
 Fortress Forever can now be compiled using Visual Studio 2022. The following instructions show how to set up a Visual Studio 2022 development environment for Fortress Forever.
 
 1. **Install Visual Studio 2022**
   * Download and install Visual Studio 2022 Community Edition [from here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022).
-2. **Install the Microsoft Platform SDK**
-  * Download and install the [Windows Server 2003 SP1 Platform SDK](https://www.microsoft.com/en-us/download/details.aspx?id=15656)
-    * You only need to install *Microsoft Windows Core SDK*
-3. **Install Windows SDK**
+2. **Install Windows SDK**
   * Download and install the Windows SDK [Installer](https://go.microsoft.com/fwlink/?linkid=2237387) or [from .ISO](https://go.microsoft.com/fwlink/?linkid=2237510)
-4. **Download the VS 2005 includes and libraries**
+3. **Download the VS 2005 includes and libraries**
   * Download the [.rar file](https://drive.google.com/file/d/1HPKgTVpzB5pSSQhMJ_J8i2uP-JgO9jyA/view?usp=sharing) and extract its contents to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC`.
-5. **Build Fortress Forever**
+4. **Build Fortress Forever**
   * Open `Game_Scratch-2005.sln` and run *Build Solution*
   * **Note:** The compiled .dlls will automatically get copied to `<SteamDirectory>\SteamApps\common\Fortress Forever\FortressForever\bin`
 
