@@ -201,6 +201,7 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressF
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
       <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+      <AdditionalOptions>/ignore:4099 %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>

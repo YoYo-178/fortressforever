@@ -135,6 +135,7 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
       <ForceSymbolReferences>%(ForceSymbolReferences)</ForceSymbolReferences>
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
+      <AdditionalOptions>/ignore:4099 /LTCG %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>
