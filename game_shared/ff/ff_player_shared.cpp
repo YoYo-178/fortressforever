@@ -659,11 +659,6 @@ void CFFPlayer::ClassSpecificSkill()
 	switch (GetClassSlot())
 	{
 #ifdef GAME_DLL
-	case CLASS_DEMOMAN:
-		if( ( GetPipebombShotTime() + PIPE_DET_DELAY ) < gpGlobals->curtime )
-			CFFProjectilePipebomb::DestroyAllPipes(this);
-		break;
-
 	case CLASS_MEDIC:
 		// Discard a health pack
 		if (IsAlive() && GetAmmoCount(AMMO_CELLS) >= 10)
@@ -759,6 +754,12 @@ void CFFPlayer::ClassSpecificSkillHold()
 
 	switch (GetClassSlot())
 	{
+#ifdef GAME_DLL
+		case CLASS_DEMOMAN:
+			if ((GetPipebombShotTime() + PIPE_DET_DELAY) < gpGlobals->curtime)
+				CFFProjectilePipebomb::DestroyAllPipes(this);
+			break;
+#endif
 		case CLASS_PYRO:
 			JetpackHold();
 			if (m_iJetpackFuel < JETPACK_MINFUEL)
