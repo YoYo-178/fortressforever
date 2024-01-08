@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.7.34024.191
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client_ff", "cl_dll\client_scratch-2005.vcxproj", "{E44D6502-2BB4-47F8-85CF-ACDD4FC18329}"
 EndProject
@@ -25,6 +25,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7FA09227-D7AD-4AC9-91D9-9BAED5429192}
+		SolutionGuid = {54AC12A4-FACC-426B-83B5-56CCB595C66C}
 	EndGlobalSection
 EndGlobal

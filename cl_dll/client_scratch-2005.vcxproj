@@ -43,24 +43,25 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>17.0.34018.303</_ProjectFileVersion>
+    <_ProjectFileVersion>17.0.34322.80</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
-    <OutDir>$(Configuration)/2005\</OutDir>
-    <IntDir>$(Configuration)/2005\</IntDir>
+    <OutDir>$(Configuration)/2005/</OutDir>
+    <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>client</TargetName>
+    <IncludePath>$(VCInstallDir)FF\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
     <OutDir>$(Configuration)/2005/</OutDir>
     <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <TargetName>client</TargetName>
     <IncludePath>$(VCInstallDir)FF\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
-    <TargetName>client</TargetName>
-    <LinkDelaySign>false</LinkDelaySign>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
     <CustomBuildStep>
@@ -170,7 +171,6 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressF
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <AdditionalOptions>/Zc:sizedDealloc- /c /Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
-      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -181,26 +181,19 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/client.pdb" "%25FortressF
     </ProjectReference>
     <Link>
       <AdditionalDependencies>libcmt.lib;ucrt.lib;winmm.lib;shell32.lib;gdi32.lib;kernel32.lib;user32.lib;comdlg32.lib;ole32.lib;oleaut32.lib;advapi32.lib;steam_api.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(IntDir)$(TargetName).dll</OutputFile>
+      <OutputFile>$(IntDir)client.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\lib\public;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(IntDir)client.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <MapFileName>$(IntDir)client.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <BaseAddress>0x24000000</BaseAddress>
-      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
+      <ImportLibrary>$(IntDir)client.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <HeapReserveSize>0</HeapReserveSize>
-      <HeapCommitSize>0</HeapCommitSize>
-      <StackReserveSize>0</StackReserveSize>
-      <StackCommitSize>0</StackCommitSize>
-      <RandomizedBaseAddress>false</RandomizedBaseAddress>
-      <CLRThreadAttribute>DefaultThreadingAttribute</CLRThreadAttribute>
-      <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
     </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>

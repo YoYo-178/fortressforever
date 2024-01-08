@@ -19,7 +19,7 @@ Fortress Forever can now be compiled using Visual Studio 2022. The following ins
 2. **Install Windows SDK**
   * Download and install the Windows SDK [Installer](https://go.microsoft.com/fwlink/?linkid=2237387) or [from .ISO](https://go.microsoft.com/fwlink/?linkid=2237510)
 3. **Download the VS 2005 includes and libraries**
-  * Download the [.rar file](https://drive.google.com/file/d/1HPKgTVpzB5pSSQhMJ_J8i2uP-JgO9jyA/view?usp=sharing) and extract its contents to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC`.
+  * Download the [.rar file](https://drive.google.com/file/d/1LxlymaA1VdnqtnuLW3RHQgQHviy8PpCe/view?usp=sharing) and extract its contents to `C:\Program Files\Microsoft Visual Studio\2022\Community\VC`.
 4. **Build Fortress Forever**
   * Open `Game_Scratch-2005.sln` and run *Build Solution*
   * **Note:** The compiled .dlls will automatically get copied to `<SteamDirectory>\SteamApps\common\Fortress Forever\FortressForever\bin`

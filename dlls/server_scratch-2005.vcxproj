@@ -41,23 +41,25 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>17.0.34018.303</_ProjectFileVersion>
+    <_ProjectFileVersion>17.0.34322.80</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
     <OutDir>$(Configuration)/2005/</OutDir>
     <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <TargetName>server</TargetName>
     <IncludePath>$(VCInstallDir)FF\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
-    <TargetName>server</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
-    <OutDir>$(Configuration)/2005\</OutDir>
-    <IntDir>$(Configuration)/2005\</IntDir>
+    <OutDir>$(Configuration)/2005/</OutDir>
+    <IntDir>$(Configuration)/2005/</IntDir>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>server</TargetName>
+    <IncludePath>$(VCInstallDir)FF\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(VCInstallDir)FF\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
     <CustomBuildStep>
@@ -104,7 +106,6 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
       <AdditionalOptions>/Zc:sizedDealloc- /c /Zc:threadSafeInit- /d2noftol3 %(AdditionalOptions)</AdditionalOptions>
-      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -115,26 +116,21 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
     </ProjectReference>
     <Link>
       <AdditionalDependencies>libcmt.lib;ucrt.lib;winmm.lib;luabind80.lib;lua80.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(IntDir)$(TargetName).dll</OutputFile>
+      <OutputFile>$(IntDir)server.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\lib\public;..\external\lua\lib;..\external\luabind\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(IntDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(IntDir)server.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(IntDir)$(TargetName).map</MapFileName>
+      <MapFileName>$(IntDir)server.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <BaseAddress>0x22000000</BaseAddress>
-      <ImportLibrary>$(IntDir)$(TargetName).lib</ImportLibrary>
+      <ImportLibrary>$(IntDir)server.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <IgnoreAllDefaultLibraries>
-      </IgnoreAllDefaultLibraries>
-      <ForceFileOutput>
-      </ForceFileOutput>
-      <ForceSymbolReferences>%(ForceSymbolReferences)</ForceSymbolReferences>
-      <LinkTimeCodeGeneration>
-      </LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <AdditionalOptions>/ignore:4204 /ignore:4075 %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>../utils/PostBuild.Bat "$(TargetPath)"</Command>
@@ -488,7 +484,6 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release FF|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\public\typeconversion\typeconversion.cpp" />
     <ClCompile Include="..\Public\vmatrix.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug FF|Win32'">
       </PrecompiledHeader>
@@ -911,6 +906,7 @@ if exist "%25FortressForeverBin%25" copy "$(TargetDir)/server.pdb" "%25FortressF
     <ClCompile Include="timedeventmgr.cpp" />
     <ClCompile Include="trains.cpp" />
     <ClCompile Include="triggers.cpp" />
+    <ClCompile Include="typeconversion\typeconversion.cpp" />
     <ClCompile Include="util.cpp" />
     <ClCompile Include="variant_t.cpp" />
     <ClCompile Include="vehicle_base.cpp" />
