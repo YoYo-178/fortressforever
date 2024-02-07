@@ -4161,20 +4161,20 @@ bool CFFPlayer::LuaIsEffectActive( int iEffect )
 		}
 		break;
 
-		case LUA_EF_LEGSHOT: IsSpeedEffectSet( SE_LEGSHOT ); break;
-		case LUA_EF_TRANQ: IsSpeedEffectSet( SE_TRANQ ); break;
-		case LUA_EF_ACSPINUP: IsSpeedEffectSet( SE_ASSAULTCANNON ); break;
-		case LUA_EF_SNIPERRIFLE: IsSpeedEffectSet( SE_SNIPERRIFLE ); break;
-		case LUA_EF_SPEED_LUA1: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA2: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA3: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA4: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA5: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA6: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA7: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA8: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA9: IsSpeedEffectSet( SE_LUA1 ); break;
-		case LUA_EF_SPEED_LUA10: IsSpeedEffectSet( SE_LUA1 ); break;
+		case LUA_EF_LEGSHOT: return IsSpeedEffectSet( SE_LEGSHOT ); break;
+		case LUA_EF_TRANQ: return IsSpeedEffectSet( SE_TRANQ ); break;
+		case LUA_EF_ACSPINUP: return IsSpeedEffectSet( SE_ASSAULTCANNON ); break;
+		case LUA_EF_SNIPERRIFLE: return IsSpeedEffectSet( SE_SNIPERRIFLE ); break;
+		case LUA_EF_SPEED_LUA1: return IsSpeedEffectSet( SE_LUA1 ); break;
+		case LUA_EF_SPEED_LUA2: return IsSpeedEffectSet( SE_LUA2 ); break;
+		case LUA_EF_SPEED_LUA3: return IsSpeedEffectSet( SE_LUA3 ); break;
+		case LUA_EF_SPEED_LUA4: return IsSpeedEffectSet( SE_LUA4 ); break;
+		case LUA_EF_SPEED_LUA5: return IsSpeedEffectSet( SE_LUA5 ); break;
+		case LUA_EF_SPEED_LUA6: return IsSpeedEffectSet( SE_LUA6 ); break;
+		case LUA_EF_SPEED_LUA7: return IsSpeedEffectSet( SE_LUA7 ); break;
+		case LUA_EF_SPEED_LUA8: return IsSpeedEffectSet( SE_LUA8 ); break;
+		case LUA_EF_SPEED_LUA9: return IsSpeedEffectSet( SE_LUA9 ); break;
+		case LUA_EF_SPEED_LUA10: return IsSpeedEffectSet( SE_LUA10 ); break;
 	}
 
 	return false;
